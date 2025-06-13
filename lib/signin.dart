@@ -1,6 +1,8 @@
 // signin_page.dart - Updated with proper homepage navigation
 import 'package:flutter/material.dart';
 import 'home_page.dart'; // Make sure this import path is correct for your project
+import 'about_me.dart'; // Import your HomePage or AboutMe page here
+
 
 class SignInPage extends StatefulWidget {
   @override
