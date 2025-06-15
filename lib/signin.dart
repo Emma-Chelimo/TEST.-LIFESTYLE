@@ -20,6 +20,7 @@ class _SignInPageState extends State<SignInPage> {
 
   @override
   void dispose() {
+    
     _emailController.dispose();
     _passwordController.dispose();
     super.dispose();
@@ -377,6 +378,22 @@ class _SignInPageState extends State<SignInPage> {
                             ),
                           ),
                         ],
+                      ),
+                      
+                      SizedBox(height: 16),
+                      
+                      // About Me button
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => AboutMePage()),
+                          );
+                        },
+                        child: Text(
+                          'About Me',
+                          style: TextStyle(fontWeight: FontWeight.w600),
+                        ),
                       ),
                     ],
                   ),

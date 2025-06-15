@@ -42,7 +42,7 @@ class _AboutMePageState extends State<AboutMePage> with TickerProviderStateMixin
           unselectedLabelColor: Colors.grey[600],
           indicatorColor: Colors.blue,
           tabs: [
-            Tab(icon: Icon(Icons.person), text: 'Profile'),
+            Tab(icon: Icon(Icons.person), text: 'My profile'),
             Tab(icon: Icon(Icons.directions_car), text: 'Formula 1'),
             Tab(icon: Icon(Icons.sports_basketball), text: 'Basketball'),
           ],
@@ -90,7 +90,7 @@ class _AboutMePageState extends State<AboutMePage> with TickerProviderStateMixin
           
           // Name and Title
           Text(
-            'Your Name',
+            'EMMA CHELIMO',
             style: TextStyle(
               fontSize: 28,
               fontWeight: FontWeight.bold,
@@ -210,8 +210,8 @@ class _AboutMePageState extends State<AboutMePage> with TickerProviderStateMixin
           // Favorite Driver
           _buildInfoCard(
             'Favorite Driver',
-            'Max Verstappen',
-            'Red Bull Racing',
+            'Lewis Hamilton',
+            'FERRARI',
             Icons.star,
             Colors.blue[600]!,
           ),
@@ -221,7 +221,7 @@ class _AboutMePageState extends State<AboutMePage> with TickerProviderStateMixin
           // Favorite Team
           _buildInfoCard(
             'Favorite Team',
-            'Red Bull Racing',
+            'Mclaren',
             'Current Champions',
             Icons.emoji_events,
             Colors.orange[600]!,
@@ -232,7 +232,7 @@ class _AboutMePageState extends State<AboutMePage> with TickerProviderStateMixin
           // Favorite Circuit
           _buildInfoCard(
             'Favorite Circuit',
-            'Monaco Grand Prix',
+            'Qatar Lusail grandprix',
             'Street Circuit Legend',
             Icons.location_on,
             Colors.green[600]!,
@@ -336,7 +336,7 @@ class _AboutMePageState extends State<AboutMePage> with TickerProviderStateMixin
             'Memorable Finals',
             '2020 NBA Finals',
             'Lakers Championship',
-            Icons.trophy,
+            Icons.card_travel,
             Colors.amber[600]!,
           ),
           
