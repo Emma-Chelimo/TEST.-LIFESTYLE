@@ -19,6 +19,8 @@ Future<void> main() async {
 
 class BeatsMusicApp extends StatelessWidget {
   const BeatsMusicApp({super.key});
+  
+  get colorScheme => null;
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +29,7 @@ class BeatsMusicApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.dark,
+        colorScheme: colorScheme.dark(),
         primaryColor: Colors.deepPurple,
         scaffoldBackgroundColor: Color(0xFF121212),
         cardColor: Color(0xFF1E1E1E),
@@ -39,7 +42,7 @@ class BeatsMusicApp extends StatelessWidget {
             TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
             TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
           },
-        ), colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.purpleAccent),
+        ),
       ),
       home: AuthWrapper(),
     );

@@ -6,6 +6,8 @@ class LoginScreen extends StatelessWidget {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
+  LoginScreen({super.key});
+
   Future<void> _login(BuildContext context) async {
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(

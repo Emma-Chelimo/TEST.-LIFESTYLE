@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+//import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class LibraryScreen extends StatelessWidget {
@@ -13,6 +13,8 @@ class LibraryScreen extends StatelessWidget {
     {'name': 'Dua Lipa', 'image': 'https://i.scdn.co/image/ab6761610000e5ebcdce7620dc940db079bf4952'},
     {'name': 'Drake', 'image': 'https://i.scdn.co/image/ab6761610000e5eb4293385d324db8558179afd9'},
   ];
+
+   LibraryScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

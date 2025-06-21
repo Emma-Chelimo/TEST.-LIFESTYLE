@@ -14,6 +14,8 @@ class HomeScreen extends StatelessWidget {
     {'title': 'Chill Hits', 'description': 'Kick back to the best...', 'image': 'https://i.scdn.co/image/ab67706f00000002a980b152e708b33c6516c16b'},
   ];
 
+   HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -42,7 +44,7 @@ class HomeScreen extends StatelessWidget {
             child: Text(title, style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
           ),
           SizedBox(height: 8),
-          Container(
+          SizedBox(
             height: isSquare ? 180 : 220,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
@@ -64,7 +66,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 8),
-                      Container(
+                      SizedBox(
                         width: isSquare ? 160 : 140,
                         child: Text(
                           items[index]['title'],
@@ -73,7 +75,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       if (items[index]['artist'] != null || items[index]['description'] != null)
-                        Container(
+                        SizedBox(
                           width: isSquare ? 160 : 140,
                           child: Text(
                             items[index]['artist'] ?? items[index]['description'],
