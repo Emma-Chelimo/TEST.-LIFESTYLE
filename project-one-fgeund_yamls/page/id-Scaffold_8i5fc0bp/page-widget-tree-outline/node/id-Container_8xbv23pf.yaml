@@ -1,0 +1,22 @@
+key: Container_8xbv23pf
+type: Container
+props:
+  container:
+    dimensions:
+      width:
+        pixelsValue:
+          inputValue: 398.7111111111111
+      height:
+        pixelsValue:
+          inputValue: 184
+    boxDecoration:
+      borderRadius:
+        bottomLeftValue:
+          inputValue: 35
+        bottomRightValue:
+          inputValue: 35
+      colorValue:
+        inputValue:
+          themeColor: ERROR
+    animationDurationValue:
+      inputValue: 100

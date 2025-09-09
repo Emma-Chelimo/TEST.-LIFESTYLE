@@ -1,0 +1,19 @@
+identifier:
+  name: getspotifyaccesstoken
+  key: pyvkc
+url: https://accounts.spotify.com/api/token
+callType: POST
+bodyType: X_WWW_FORM_URL_ENCODED
+headers:
+  - "Content-type: application\/x-www-form-urlencoded"
+  - "Authorization: Basic [client_id: 70cee4db414d442093c5729ae40c5841 client_scret: 6724560c19b44f888848d953ad563e08"
+endpointSettings:
+  isPrivateApi: false
+  requireAuthentication: true
+  escapeVariablesInRequestBody: true
+parameters:
+  - identifier:
+      name: grant-type=client_credentials
+      key: 0qsfvqo6
+    specifiedValue: client_credentials
+    type: String

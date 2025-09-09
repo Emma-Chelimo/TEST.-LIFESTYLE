@@ -1,0 +1,9 @@
+key: Row_48hkbdju
+type: Row
+props:
+  row:
+    mainAxisAlignment: main_axis_center
+    crossAxisAlignment: cross_axis_start
+  padding:
+    topValue:
+      inputValue: 20

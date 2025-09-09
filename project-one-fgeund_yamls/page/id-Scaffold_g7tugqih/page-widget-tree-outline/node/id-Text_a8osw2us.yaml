@@ -1,0 +1,16 @@
+key: Text_a8osw2us
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: yx7lot7m
+    selectable: false
+    textValue:
+      inputValue: "Dont have an account, create"
+    colorValue:
+      inputValue:
+        themeColor: PRIMARY_BACKGROUND
+  padding:
+    topValue:
+      inputValue: 20

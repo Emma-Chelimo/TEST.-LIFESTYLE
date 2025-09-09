@@ -1,0 +1,17 @@
+name: Basehomepg
+description: ""
+node:
+  key: Scaffold_m2t6ahy1
+classModel:
+  stateFields:
+    - parameter:
+        identifier:
+          name: isplaying
+          key: 1re75
+        defaultValue:
+          serializedValue: "false"
+        dataType:
+          scalarType: Boolean
+          nonNullable: true
+      serializedDefaultValue:
+        - "true"

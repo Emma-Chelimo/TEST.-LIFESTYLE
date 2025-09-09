@@ -1,0 +1,25 @@
+node:
+  key: Scaffold_zd3i0yjx
+  appBar:
+    key: AppBar_ytucbuyk
+    title:
+      key: Text_qdgiio0p
+  body:
+    key: Container_rcjofz8g
+    children:
+      - key: Column_2s6w3975
+        children:
+          - key: Text_44utcto0
+          - key: Container_g3vmq98c
+            children:
+              - key: Text_tyyw294h
+          - key: Container_2ln3axze
+            children:
+              - key: Text_v6ny8q45
+          - key: Container_he0j5l2f
+            children:
+              - key: Text_4amgxkyv
+          - key: Container_19eyq41r
+            children:
+              - key: Text_xx8kz4s8
+          - key: Text_rltdfat8

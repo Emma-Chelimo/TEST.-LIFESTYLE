@@ -1,0 +1,18 @@
+key: Text_44utcto0
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: 59u4p8j8
+    selectable: false
+    textValue:
+      inputValue: Welcome let's get started with your account
+    colorValue:
+      inputValue:
+        themeColor: PRIMARY_BACKGROUND
+    fontWeightValue:
+      inputValue: w600
+  padding:
+    topValue:
+      inputValue: 20

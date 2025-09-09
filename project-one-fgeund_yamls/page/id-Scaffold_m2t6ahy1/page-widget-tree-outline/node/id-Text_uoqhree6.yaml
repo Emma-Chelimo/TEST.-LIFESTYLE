@@ -1,0 +1,13 @@
+key: Text_uoqhree6
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: 9o8tl52p
+    selectable: false
+    textValue:
+      inputValue: Playlist
+    colorValue:
+      inputValue:
+        themeColor: PRIMARY_BACKGROUND

@@ -1,0 +1,6 @@
+name: Searchpg
+params: {}
+node:
+  key: Scaffold_dm6tvlr3
+pageRouteSettings:
+  routePath: searchPage

@@ -1,0 +1,15 @@
+key: Text_86miaq0u
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: jcvhlyyz
+    selectable: false
+    textValue:
+      inputValue: Followers
+    colorValue:
+      inputValue:
+        themeColor: SECONDARY_BACKGROUND
+    fontWeightValue:
+      inputValue: w600

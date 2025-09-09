@@ -1,0 +1,35 @@
+key: Container_19eyq41r
+type: Container
+props:
+  container:
+    dimensions:
+      width:
+        pixelsValue:
+          inputValue: 100
+      height:
+        pixelsValue:
+          inputValue: 40
+    boxDecoration:
+      borderRadius:
+        topLeftValue:
+          inputValue: 25
+        topRightValue:
+          inputValue: 25
+        bottomLeftValue:
+          inputValue: 25
+        bottomRightValue:
+          inputValue: 25
+      colorValue:
+        inputValue:
+          value: "4293867866"
+    animationDurationValue:
+      inputValue: 100
+  padding:
+    topValue:
+      inputValue: 20
+  opacity:
+    animatedOpacity:
+      animatedOpacityIsEnabled: true
+      opacityAnimationCurve: EASE_IN_OUT
+      opacityAnimationDurationValue:
+        inputValue: 300

@@ -1,0 +1,25 @@
+key: Container_sggxc28x
+type: Container
+props:
+  container:
+    dimensions:
+      width:
+        pixelsValue:
+          inputValue: 270
+      height:
+        pixelsValue:
+          inputValue: 400
+    boxDecoration:
+      borderRadius:
+        bottomLeftValue:
+          inputValue: 125
+        bottomRightValue:
+          inputValue: 125
+      colorValue:
+        inputValue:
+          themeColor: SECONDARY_BACKGROUND
+    animationDurationValue:
+      inputValue: 100
+  padding:
+    leftValue:
+      inputValue: 30

@@ -1,0 +1,14 @@
+key: Column_itexrrum
+type: Column
+props:
+  column:
+    primary: true
+    listSpacing: {}
+    minSizeValue:
+      inputValue: false
+  responsiveVisibility: {}
+  opacity:
+    opacityValue:
+      inputValue: 1
+    animatedOpacity: {}
+valueKey: {}

@@ -1,0 +1,16 @@
+rules:
+  collectionRules:
+    x1lx14ot:
+      creat:
+        noOne: {}
+      read:
+        users: {}
+      update:
+        users: {}
+      delete:
+        users: {}
+      deleteWhenUserIsDeleted: true
+storageRules:
+  excludeFromStorageRules: true
+  rules:
+    userUploadsArePrivate: true

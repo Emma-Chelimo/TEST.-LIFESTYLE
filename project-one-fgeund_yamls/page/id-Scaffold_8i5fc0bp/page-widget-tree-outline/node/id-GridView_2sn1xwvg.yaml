@@ -1,0 +1,49 @@
+key: GridView_2sn1xwvg
+type: GridView
+props:
+  gridView:
+    shrinkWrapValue:
+      inputValue: false
+    crossAxisCountValue:
+      inputValue: 3
+    crossAxisSpacingValue:
+      inputValue: 10
+    mainAxisSpacingValue:
+      inputValue: 10
+    childAspectRatioValue:
+      inputValue: 1
+    isHorizontalValue:
+      inputValue: true
+  queryLoadingWidget:
+    loadingWidget:
+      defaultLoadingIndicator: {}
+databaseRequest:
+  returnParameter:
+    dataType:
+      listType:
+        scalarType: Document
+      subType:
+        collectionIdentifier:
+          name: users
+          key: x1lx14ot
+  firestore:
+    collectionIdentifier:
+      name: users
+      key: x1lx14ot
+    limit: 10
+    hideOnEmpty: false
+    where:
+      filters:
+        - baseFilter:
+            collectionFieldIdentifier:
+              name: posts
+            relation: ARRAY_CONTAINS_ANY
+            variable:
+              source: FIREBASE_AUTH_USER
+              baseVariable:
+                auth:
+                  property: USERS_DATA_FIELD
+                  usersDataField:
+                    name: posts
+  requestManagerSettings:
+    useRequestManager: false

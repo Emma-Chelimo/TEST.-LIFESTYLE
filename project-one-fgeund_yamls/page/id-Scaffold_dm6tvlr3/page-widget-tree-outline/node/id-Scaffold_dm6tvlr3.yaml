@@ -1,0 +1,48 @@
+key: Scaffold_dm6tvlr3
+type: Scaffold
+props:
+  scaffold:
+    safeArea: true
+    navBarItem:
+      navIcon:
+        sizeValue:
+          inputValue: 24
+        colorValue:
+          inputValue:
+            value: "4288585374"
+        iconDataValue:
+          inputValue:
+            codePoint: 983357
+            family: MaterialIcons
+            matchTextDirection: false
+            name: search_rounded
+      navActiveIcon:
+        sizeValue:
+          inputValue: 24
+        colorValue:
+          inputValue:
+            themeColor: PRIMARY
+        iconDataValue:
+          inputValue:
+            codePoint: 58136
+            family: MaterialIcons
+            matchTextDirection: false
+            name: home
+      show: true
+      differentActiveIcon: false
+      label:
+        translationIdentifier:
+          key: bej4zwqj
+        textValue:
+          inputValue: search
+      alwaysShowNavBar: true
+    hideKeyboardOnTap: true
+    disableAndroidBackButton: false
+    backgroundColorValue:
+      inputValue:
+        paletteColorName: Rich Black FOGRA 39
+  opacity:
+    opacityValue:
+      inputValue: 1
+    animatedOpacity: {}
+name: Searchpg

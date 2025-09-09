@@ -1,0 +1,52 @@
+node:
+  key: Scaffold_8i5fc0bp
+  appBar:
+    key: AppBar_zrl2elyn
+    title:
+      key: Text_7up10ktb
+  body:
+    key: Container_fmffyiuy
+    children:
+      - key: Column_1zybpp1i
+        children:
+          - key: Row_ppa01bry
+            children:
+              - key: Icon_6r98q3gm
+              - key: Icon_gs9mk8ff
+          - key: Row_48hkbdju
+            children:
+              - key: CircleImage_5izbpw9p
+              - key: Icon_57kpm6pt
+          - key: Row_m8bhsw9s
+            children:
+              - key: Text_7vanaldk
+              - key: Text_xhidj0k4
+          - key: Row_xn4njj77
+            children:
+              - key: Text_86miaq0u
+              - key: Text_bg61fmms
+          - key: Container_xwvp7103
+            children:
+              - key: Column_c7vt0zwy
+                children:
+                  - key: Column_q2hrm3mt
+                    children:
+                      - key: Column_egj24z3f
+                        children:
+                          - key: Row_n0whnovb
+                            children:
+                              - key: Text_gxqfxfvx
+                              - key: Container_xjmua2sp
+                                children:
+                                  - key: Row_ksywk9t0
+                                    children:
+                                      - key: Text_qchnzr9k
+                          - key: Row_kg7db8qb
+                            children:
+                              - key: Icon_es39uc46
+                              - key: Text_wyebcqh5
+                  - key: Container_8xbv23pf
+                    children:
+                      - key: GridView_2sn1xwvg
+                        children:
+                          - key: Container_5m1iwbsk

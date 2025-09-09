@@ -1,0 +1,13 @@
+key: Text_wr5yvgvj
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: 6n2oxw9r
+    selectable: false
+    textValue:
+      inputValue: Hinted search
+  padding:
+    leftValue:
+      inputValue: 40

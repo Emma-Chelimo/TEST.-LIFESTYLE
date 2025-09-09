@@ -1,0 +1,15 @@
+key: Text_hueftnad
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: a13k1q4s
+    selectable: false
+    textValue:
+      inputValue: Playlist
+    colorValue:
+      inputValue:
+        themeColor: ALTERNATE
+    fontWeightValue:
+      inputValue: w600

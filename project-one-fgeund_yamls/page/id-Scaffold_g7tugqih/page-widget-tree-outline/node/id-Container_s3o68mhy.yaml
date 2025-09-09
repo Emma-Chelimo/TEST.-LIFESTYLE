@@ -1,0 +1,39 @@
+key: Container_s3o68mhy
+type: Container
+props:
+  container:
+    dimensions:
+      width:
+        pixelsValue:
+          inputValue: 300
+      height:
+        pixelsValue:
+          inputValue: 60
+    boxDecoration:
+      borderRadius:
+        topLeftValue:
+          inputValue: 25
+        topRightValue:
+          inputValue: 25
+        bottomLeftValue:
+          inputValue: 25
+        bottomRightValue:
+          inputValue: 25
+      boxShape: FF_BOX_SHAPE_RECTANGLE
+      colorValue:
+        inputValue:
+          themeColor: SECONDARY_BACKGROUND
+    animationDurationValue:
+      inputValue: 100
+  padding:
+    type: FF_PADDING_ONLY
+    topValue:
+      inputValue: 100
+  opacity:
+    opacityValue:
+      inputValue: 0.8
+    animatedOpacity:
+      animatedOpacityIsEnabled: true
+      opacityAnimationCurve: EASE_IN_OUT
+      opacityAnimationDurationValue:
+        inputValue: 300

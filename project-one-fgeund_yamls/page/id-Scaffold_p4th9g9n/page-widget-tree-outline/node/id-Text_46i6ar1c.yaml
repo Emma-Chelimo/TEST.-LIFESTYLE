@@ -1,0 +1,16 @@
+key: Text_46i6ar1c
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: dni4ea0d
+    selectable: false
+    textValue:
+      inputValue: "0 : 32"
+    colorValue:
+      inputValue:
+        themeColor: PRIMARY_BACKGROUND
+  padding:
+    leftValue:
+      inputValue: 20

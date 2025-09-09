@@ -1,0 +1,8 @@
+projectConfig:
+  enabled: true
+  supabaseUrl:
+    inputValue:
+      serializedValue: https://brqyhryqrejbqjuwnbpn.supabase.co
+  anonKey:
+    inputValue:
+      serializedValue: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJycXlocnlxcmVqYnFqdXduYnBuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU3Nzg3NDIsImV4cCI6MjA3MTM1NDc0Mn0.mZ0wEqS9FUK2GPQq_bh_Q_1mkshpGV9yVoZL2BIFGFQ

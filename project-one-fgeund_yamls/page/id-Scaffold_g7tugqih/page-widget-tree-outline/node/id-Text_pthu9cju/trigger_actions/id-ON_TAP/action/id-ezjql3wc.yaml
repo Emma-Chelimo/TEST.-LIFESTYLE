@@ -1,0 +1,13 @@
+auth:
+  type: UPDATE_EMAIL
+  emailVariable:
+    source: LOCAL_STATE
+    baseVariable:
+      localState:
+        fieldIdentifier:
+          name: email
+          key: mfwbm
+        stateVariableType: WIDGET_CLASS_STATE
+    nodeKeyRef:
+      key: Scaffold_g7tugqih
+key: ezjql3wc

@@ -1,0 +1,17 @@
+key: Text_xx8kz4s8
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: m0a296le
+    selectable: false
+    textValue:
+      inputValue: Create
+    fontWeightValue:
+      inputValue: w600
+  padding:
+    leftValue:
+      inputValue: 28
+    topValue:
+      inputValue: 10

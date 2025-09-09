@@ -1,0 +1,18 @@
+key: Icon_d6r1qkyc
+type: Icon
+props:
+  icon:
+    sizeValue:
+      inputValue: 20
+    colorValue:
+      inputValue:
+        themeColor: PRIMARY_TEXT
+    iconDataValue:
+      inputValue:
+        codePoint: 58813
+        family: MaterialIcons
+        matchTextDirection: false
+        name: skip_next
+  padding:
+    leftValue:
+      inputValue: 30

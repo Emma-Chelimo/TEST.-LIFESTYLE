@@ -1,0 +1,8 @@
+key: Row_m8bhsw9s
+type: Row
+props:
+  row:
+    mainAxisAlignment: main_axis_space_around
+  padding:
+    topValue:
+      inputValue: 94

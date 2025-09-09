@@ -1,0 +1,15 @@
+key: Text_3y5cgfus
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: u7lpa02o
+    selectable: false
+    textValue:
+      inputValue: playlist
+    colorValue:
+      inputValue:
+        themeColor: ALTERNATE
+    fontWeightValue:
+      inputValue: w600

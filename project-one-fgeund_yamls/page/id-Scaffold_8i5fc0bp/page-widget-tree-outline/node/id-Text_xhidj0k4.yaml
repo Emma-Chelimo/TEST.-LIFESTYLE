@@ -1,0 +1,28 @@
+key: Text_xhidj0k4
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: m9xg4p6i
+    selectable: false
+    textValue:
+      variable:
+        source: FIREBASE_AUTH_USER
+        defaultValue:
+          serializedValue: "000"
+        baseVariable:
+          auth:
+            property: USERS_DATA_FIELD
+            usersDataField:
+              name: likes
+        operations:
+          - listNumItems: {}
+          - numberFormat:
+              formatType: COMPACT
+        uiBuilderValue:
+          serializedValue: "000"
+      mostRecentInputValue: "000"
+    colorValue:
+      inputValue:
+        themeColor: SECONDARY_BACKGROUND

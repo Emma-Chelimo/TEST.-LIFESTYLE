@@ -1,0 +1,20 @@
+key: Text_739gvt7n
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: 7abzp49t
+    selectable: false
+    textValue:
+      inputValue: Albums
+    fontSizeValue:
+      inputValue: 20
+    colorValue:
+      inputValue:
+        themeColor: PRIMARY_BACKGROUND
+    fontWeightValue:
+      inputValue: w600
+  padding:
+    leftValue:
+      inputValue: 20

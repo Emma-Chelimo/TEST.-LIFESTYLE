@@ -1,0 +1,18 @@
+key: Icon_9zujleb4
+type: Icon
+props:
+  icon:
+    sizeValue:
+      inputValue: 24
+    colorValue:
+      inputValue:
+        themeColor: PRIMARY_TEXT
+    iconDataValue:
+      inputValue:
+        codePoint: 983442
+        family: MaterialIcons
+        matchTextDirection: false
+        name: skip_next_rounded
+  padding:
+    leftValue:
+      inputValue: 40

@@ -1,0 +1,16 @@
+key: Text_2toyb94w
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: tsmvfroo
+    selectable: false
+    textValue:
+      inputValue: Welcome home.
+    colorValue:
+      inputValue:
+        value: "4294373875"
+  padding:
+    leftValue:
+      inputValue: 20

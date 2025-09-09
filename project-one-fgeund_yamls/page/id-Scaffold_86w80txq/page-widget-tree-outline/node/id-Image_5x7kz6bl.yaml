@@ -1,0 +1,32 @@
+key: Image_5x7kz6bl
+type: Image
+props:
+  image:
+    type: FF_IMAGE_TYPE_NETWORK
+    fit: FF_BOX_FIT_COVER
+    dimensions:
+      width:
+        pixelsValue:
+          inputValue: 50
+      height:
+        pixelsValue:
+          inputValue: 50
+    borderRadius:
+      type: FF_BORDER_RADIUS_ONLY
+      topLeftValue:
+        inputValue: 25
+      topRightValue:
+        inputValue: 25
+      bottomLeftValue:
+        inputValue: 25
+      bottomRightValue:
+        inputValue: 25
+      allValue:
+        inputValue: 8
+    cacheFadeDuration: 500
+    pathValue:
+      inputValue: https://picsum.photos/seed/239/600
+    format: FF_IMAGE_FORMAT_AUTO
+  padding:
+    leftValue:
+      inputValue: 10

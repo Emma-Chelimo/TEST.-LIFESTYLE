@@ -1,0 +1,21 @@
+key: Image_nlf4ifco
+type: Image
+props:
+  image:
+    type: FF_IMAGE_TYPE_NETWORK
+    fit: FF_BOX_FIT_COVER
+    dimensions:
+      width:
+        pixelsValue:
+          inputValue: 40
+      height:
+        pixelsValue:
+          inputValue: 40
+    borderRadius:
+      type: FF_BORDER_RADIUS_ALL
+      allValue:
+        inputValue: 8
+    cacheFadeDuration: 500
+    pathValue:
+      inputValue: https://picsum.photos/seed/839/600
+    format: FF_IMAGE_FORMAT_AUTO

@@ -1,0 +1,20 @@
+key: Text_bmvhteox
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: nepqz6t2
+    selectable: false
+    textValue:
+      inputValue: Recommended
+    fontSizeValue:
+      inputValue: 20
+    colorValue:
+      inputValue:
+        themeColor: PRIMARY_BACKGROUND
+    fontWeightValue:
+      inputValue: w600
+  padding:
+    leftValue:
+      inputValue: 20

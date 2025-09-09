@@ -1,0 +1,139 @@
+languages:
+  - language: en
+  - language: af
+  - language: hi
+  - language: it
+  - language: tn
+primaryLanguage:
+  language: en
+displayLanguage:
+  language: en
+presetTexts:
+  authMessages:
+    error:
+      translationIdentifier:
+        key: 6nn3338x
+      textValue:
+        inputValue: ""
+    passwordResetEmailSent:
+      translationIdentifier:
+        key: 3cmcsdlm
+      textValue:
+        inputValue: ""
+    emailRequired:
+      translationIdentifier:
+        key: z4zgtebg
+      textValue:
+        inputValue: ""
+    phoneNumberValidation:
+      translationIdentifier:
+        key: lqni8esw
+      textValue:
+        inputValue: ""
+    passwordsDoNotMatch:
+      translationIdentifier:
+        key: awuwpvzj
+      textValue:
+        inputValue: ""
+    enterSmsVerificationCode:
+      translationIdentifier:
+        key: h7q17ovh
+      textValue:
+        inputValue: ""
+    reauthenticateForUserDelete:
+      translationIdentifier:
+        key: sq09w3v9
+      textValue:
+        inputValue: ""
+    reauthenticateForEmailUpdate:
+      translationIdentifier:
+        key: u4eirvrt
+      textValue:
+        inputValue: ""
+    emailChangeConfirmation:
+      translationIdentifier:
+        key: t2zlj5ps
+      textValue:
+        inputValue: ""
+    emailAlreadyInUse:
+      translationIdentifier:
+        key: vu033acn
+      textValue:
+        inputValue: ""
+    invalidCredentials:
+      translationIdentifier:
+        key: j3a5ohyq
+      textValue:
+        inputValue: ""
+  uploadDataMessages:
+    invalidFileFormat:
+      translationIdentifier:
+        key: 3fuqkuku
+      textValue:
+        inputValue: ""
+    uploadingFile:
+      translationIdentifier:
+        key: 671x15ve
+      textValue:
+        inputValue: ""
+    success:
+      translationIdentifier:
+        key: v0uno1zg
+      textValue:
+        inputValue: ""
+    error:
+      translationIdentifier:
+        key: dc5o0plg
+      textValue:
+        inputValue: ""
+    sendingPhoto:
+      translationIdentifier:
+        key: exg305rs
+      textValue:
+        inputValue: ""
+    chooseSource:
+      translationIdentifier:
+        key: owzzdkx6
+      textValue:
+        inputValue: ""
+    gallery:
+      translationIdentifier:
+        key: ilswyqum
+      textValue:
+        inputValue: ""
+    galleryPhoto:
+      translationIdentifier:
+        key: gaqmamp0
+      textValue:
+        inputValue: ""
+    galleryVideo:
+      translationIdentifier:
+        key: whesm0ww
+      textValue:
+        inputValue: ""
+    camera:
+      translationIdentifier:
+        key: up00uw4o
+      textValue:
+        inputValue: ""
+    empty:
+      translationIdentifier:
+        key: vq9oxjgf
+      textValue:
+        inputValue: ""
+  paymentMessages:
+    processingMessage:
+      translationIdentifier:
+        key: qarpgfas
+      textValue:
+        inputValue: ""
+    success:
+      translationIdentifier:
+        key: fm29nrtk
+      textValue:
+        inputValue: ""
+    error:
+      translationIdentifier:
+        key: simdxq9v
+      textValue:
+        inputValue: ""

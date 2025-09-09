@@ -1,0 +1,20 @@
+name: PROJECT-ONE
+authPageInfo:
+  homePageNodeKeyRef:
+    key: Scaffold_m2t6ahy1
+  signInPageNodeKeyRef:
+    key: Scaffold_g7tugqih
+appSettings:
+  advancedSettings:
+    webBuildSettings: {}
+routingSettings:
+  enableRouting: true
+  enableFirebaseDynamicLinks: false
+  pagesAreSubroutesOfRoot: true
+initialPageKeyRef:
+  key: Scaffold_m2t6ahy1
+allAppNames:
+  appNames:
+    PROD:
+      packageName: com.mycompany.projectone
+      displayName: Beats

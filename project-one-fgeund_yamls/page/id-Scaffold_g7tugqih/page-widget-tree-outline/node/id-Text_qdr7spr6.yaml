@@ -1,0 +1,17 @@
+key: Text_qdr7spr6
+type: Text
+props:
+  text:
+    themeStyle: HEADLINE_MEDIUM
+    translationIdentifier:
+      key: znx3bkg4
+    textValue:
+      inputValue: Login
+    fontSizeValue:
+      inputValue: 22
+    colorValue:
+      inputValue:
+        value: "4294967295"
+  padding:
+    leftValue:
+      inputValue: 150

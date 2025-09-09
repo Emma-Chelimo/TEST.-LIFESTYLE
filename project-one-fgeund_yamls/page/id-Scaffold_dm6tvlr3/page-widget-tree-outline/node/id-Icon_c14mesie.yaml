@@ -1,0 +1,27 @@
+key: Icon_c14mesie
+type: Icon
+props:
+  icon:
+    sizeValue:
+      inputValue: 20
+    colorValue:
+      inputValue:
+        themeColor: PRIMARY_TEXT
+    iconDataValue:
+      inputValue:
+        codePoint: 61642
+        family: FontAwesomeSolid
+        package: font_awesome_flutter
+        matchTextDirection: false
+        packageIcon:
+          fontAwesome: listUl
+        name: listUl
+  padding:
+    leftValue:
+      inputValue: 15
+  responsiveVisibility: {}
+  opacity:
+    opacityValue:
+      inputValue: 1
+    animatedOpacity: {}
+valueKey: {}

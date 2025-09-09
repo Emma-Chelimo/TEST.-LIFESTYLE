@@ -1,0 +1,49 @@
+key: Container_g61on6sx
+type: Container
+props:
+  container:
+    dimensions:
+      width:
+        pixelsValue:
+          inputValue: 300
+      height:
+        pixelsValue:
+          inputValue: 50
+    boxDecoration:
+      borderRadius:
+        topLeftValue:
+          inputValue: 25
+        topRightValue:
+          inputValue: 25
+        bottomLeftValue:
+          inputValue: 25
+        bottomRightValue:
+          inputValue: 25
+      boxShadow: {}
+      image: {}
+      colorValue:
+        inputValue:
+          themeColor: SECONDARY_BACKGROUND
+      borderColorValue:
+        inputValue:
+          value: "4282663527"
+    maxDimensions: {}
+    minDimensions: {}
+    animationDurationValue:
+      inputValue: 100
+  padding:
+    leftValue:
+      inputValue: 50
+    topValue:
+      inputValue: 20
+  alignment:
+    xValue:
+      inputValue: -1
+    yValue:
+      inputValue: -1
+  responsiveVisibility: {}
+  opacity:
+    opacityValue:
+      inputValue: 0.8
+    animatedOpacity: {}
+valueKey: {}

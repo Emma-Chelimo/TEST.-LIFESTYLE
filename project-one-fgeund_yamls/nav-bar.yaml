@@ -1,0 +1,16 @@
+show: true
+showSelectedLabels: true
+backgroundColor:
+  paletteColorName: Rich Black FOGRA 39
+selectedIconColor:
+  themeColor: ERROR
+unselectedIconColor:
+  themeColor: SUCCESS
+navBarType: FLUTTER_NAV_BAR
+responsiveVisibility:
+  desktopHidden: true
+pageKeyRefOrder:
+  - key: Scaffold_m2t6ahy1
+  - key: Scaffold_dm6tvlr3
+  - key: Scaffold_86w80txq
+  - key: Scaffold_8i5fc0bp

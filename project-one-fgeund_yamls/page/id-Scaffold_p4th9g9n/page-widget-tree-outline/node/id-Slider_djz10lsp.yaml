@@ -1,0 +1,26 @@
+key: Slider_djz10lsp
+type: Slider
+props:
+  padding:
+    topValue:
+      inputValue: 10
+  slider:
+    showValue: false
+    numDecimalPlaces: 2
+    activeColorValue:
+      inputValue:
+        themeColor: ERROR
+    inactiveColorValue:
+      inputValue:
+        themeColor: ALTERNATE
+    minValue:
+      inputValue: 0
+    maxValue:
+      inputValue: 10
+    initialValueValue:
+      inputValue: 1
+    displayValueValue:
+      inputValue: 1
+    widthValue:
+      inputValue: 390
+  platformType: MATERIAL

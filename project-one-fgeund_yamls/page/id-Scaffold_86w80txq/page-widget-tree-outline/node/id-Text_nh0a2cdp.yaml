@@ -1,0 +1,17 @@
+key: Text_nh0a2cdp
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: np4khfph
+    selectable: false
+    textValue:
+      inputValue: Songs
+    fontSizeValue:
+      inputValue: 20
+    colorValue:
+      inputValue:
+        themeColor: SECONDARY_BACKGROUND
+    fontWeightValue:
+      inputValue: w600

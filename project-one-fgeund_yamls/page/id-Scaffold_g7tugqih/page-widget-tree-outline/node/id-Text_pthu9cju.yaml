@@ -1,0 +1,48 @@
+key: Text_pthu9cju
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: sc97rg9o
+    selectable: false
+    textValue:
+      variable:
+        source: LOCAL_STATE
+        defaultValue:
+          serializedValue: email
+        baseVariable:
+          localState:
+            fieldIdentifier:
+              name: email
+              key: mfwbm
+            stateVariableType: WIDGET_CLASS_STATE
+        nodeKeyRef:
+          key: Scaffold_g7tugqih
+        uiBuilderValue:
+          serializedValue: email
+    fontWeightValue:
+      inputValue: w600
+  padding:
+    leftValue:
+      inputValue: 20
+  responsiveVisibility: {}
+  opacity:
+    opacityValue:
+      inputValue: 1
+    animatedOpacity: {}
+valueKey:
+  variable:
+    source: LOCAL_STATE
+    defaultValue:
+      serializedValue: email
+    baseVariable:
+      localState:
+        fieldIdentifier:
+          name: email
+          key: mfwbm
+        stateVariableType: WIDGET_CLASS_STATE
+    nodeKeyRef:
+      key: Scaffold_g7tugqih
+    uiBuilderValue:
+      serializedValue: email

@@ -1,0 +1,29 @@
+key: Container_xjmua2sp
+type: Container
+props:
+  container:
+    dimensions:
+      width:
+        pixelsValue:
+          inputValue: 90
+      height:
+        pixelsValue:
+          inputValue: 50
+    boxDecoration:
+      borderRadius:
+        topLeftValue:
+          inputValue: 25
+        topRightValue:
+          inputValue: 25
+        bottomLeftValue:
+          inputValue: 25
+        bottomRightValue:
+          inputValue: 25
+      colorValue:
+        inputValue:
+          value: "4290730738"
+    animationDurationValue:
+      inputValue: 100
+  padding:
+    leftValue:
+      inputValue: 200

@@ -1,0 +1,17 @@
+key: Text_qdgiio0p
+type: Text
+props:
+  text:
+    themeStyle: HEADLINE_MEDIUM
+    translationIdentifier:
+      key: l86s571b
+    textValue:
+      inputValue: Sign in
+    fontSizeValue:
+      inputValue: 22
+    colorValue:
+      inputValue:
+        value: "4294967295"
+  padding:
+    leftValue:
+      inputValue: 150

@@ -1,0 +1,14 @@
+database:
+  updateDocument:
+    write:
+      updates:
+        photo_url:
+          fieldIdentifier:
+            name: photo_url
+          uploadVariableNodeKey: Icon_57kpm6pt
+    reference:
+      source: FIREBASE_AUTH_USER
+      baseVariable:
+        auth:
+          property: USER_REFERENCE
+key: 04gtdk2a

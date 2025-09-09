@@ -1,0 +1,18 @@
+key: Icon_8d7uhgp7
+type: Icon
+props:
+  icon:
+    sizeValue:
+      inputValue: 24
+    colorValue:
+      inputValue:
+        value: "4294906367"
+    iconDataValue:
+      inputValue:
+        codePoint: 58768
+        family: MaterialIcons
+        matchTextDirection: false
+        name: settings_suggest
+  padding:
+    leftValue:
+      inputValue: 350

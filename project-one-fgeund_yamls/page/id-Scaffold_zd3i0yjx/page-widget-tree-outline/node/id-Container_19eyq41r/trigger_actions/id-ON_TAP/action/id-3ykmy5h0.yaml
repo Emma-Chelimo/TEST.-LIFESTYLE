@@ -1,0 +1,34 @@
+auth:
+  type: CREATE_ACCOUNT
+  provider: EMAIL
+  emailVariable:
+    source: LOCAL_STATE
+    baseVariable:
+      localState:
+        fieldIdentifier:
+          name: email
+          key: rfgpg
+        stateVariableType: WIDGET_CLASS_STATE
+    nodeKeyRef:
+      key: Scaffold_zd3i0yjx
+  passwordVariable:
+    source: LOCAL_STATE
+    baseVariable:
+      localState:
+        fieldIdentifier:
+          name: password
+          key: sbkq9
+        stateVariableType: WIDGET_CLASS_STATE
+    nodeKeyRef:
+      key: Scaffold_zd3i0yjx
+  confirmPasswordVariable:
+    source: LOCAL_STATE
+    baseVariable:
+      localState:
+        fieldIdentifier:
+          name: password
+          key: sbkq9
+        stateVariableType: WIDGET_CLASS_STATE
+    nodeKeyRef:
+      key: Scaffold_zd3i0yjx
+key: 3ykmy5h0

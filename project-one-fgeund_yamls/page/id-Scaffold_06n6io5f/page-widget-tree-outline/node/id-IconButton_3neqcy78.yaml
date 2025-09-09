@@ -1,0 +1,27 @@
+key: IconButton_3neqcy78
+type: IconButton
+props:
+  iconButton:
+    buttonSize:
+      pixelsValue:
+        inputValue: 50
+    borderRadiusValue:
+      inputValue: 30
+    borderColorValue:
+      inputValue:
+        value: "0"
+    borderWidthValue:
+      inputValue: 1
+    iconValue:
+      inputValue:
+        sizeValue:
+          inputValue: 20
+        colorValue:
+          inputValue:
+            value: "4294967295"
+        iconDataValue:
+          inputValue:
+            codePoint: 62834
+            family: MaterialIcons
+            matchTextDirection: true
+            name: arrow_back_rounded

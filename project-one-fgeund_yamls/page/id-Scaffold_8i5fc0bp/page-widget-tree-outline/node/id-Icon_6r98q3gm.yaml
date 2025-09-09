@@ -1,0 +1,18 @@
+key: Icon_6r98q3gm
+type: Icon
+props:
+  icon:
+    sizeValue:
+      inputValue: 20
+    colorValue:
+      inputValue:
+        themeColor: SECONDARY_BACKGROUND
+    iconDataValue:
+      inputValue:
+        codePoint: 57490
+        family: MaterialIcons
+        matchTextDirection: true
+        name: arrow_back
+  padding:
+    leftValue:
+      inputValue: 10

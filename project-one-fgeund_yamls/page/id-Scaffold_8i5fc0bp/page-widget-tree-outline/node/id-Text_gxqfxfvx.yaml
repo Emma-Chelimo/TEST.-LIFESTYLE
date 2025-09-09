@@ -1,0 +1,26 @@
+key: Text_gxqfxfvx
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: 24lduz54
+    selectable: false
+    textValue:
+      variable:
+        source: FIREBASE_AUTH_USER
+        defaultValue:
+          serializedValue: Name
+        baseVariable:
+          auth:
+            property: DISPLAY_NAME
+        uiBuilderValue:
+          serializedValue: Name
+    colorValue:
+      inputValue:
+        themeColor: PRIMARY_BACKGROUND
+    fontWeightValue:
+      inputValue: w600
+  padding:
+    leftValue:
+      inputValue: 20

@@ -1,0 +1,13 @@
+key: Text_jyjnyvox
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: t1zh0xk3
+    selectable: false
+    textValue:
+      inputValue: Album
+    colorValue:
+      inputValue:
+        themeColor: PRIMARY_BACKGROUND

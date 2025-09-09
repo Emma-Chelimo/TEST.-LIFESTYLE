@@ -1,0 +1,13 @@
+key: Text_bxjbm6nz
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: kiiy7wgj
+    selectable: false
+    textValue:
+      inputValue: Playlist
+    colorValue:
+      inputValue:
+        themeColor: PRIMARY_BACKGROUND

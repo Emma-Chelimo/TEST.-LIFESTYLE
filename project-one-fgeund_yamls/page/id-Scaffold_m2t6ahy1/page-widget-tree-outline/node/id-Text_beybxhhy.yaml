@@ -1,0 +1,13 @@
+key: Text_beybxhhy
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: 9gpzar9w
+    selectable: false
+    textValue:
+      inputValue: Album
+    colorValue:
+      inputValue:
+        themeColor: PRIMARY_BACKGROUND

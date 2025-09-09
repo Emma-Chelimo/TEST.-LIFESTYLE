@@ -1,0 +1,8 @@
+key: Column_9k9q6ukl
+type: Column
+props:
+  column:
+    primary: true
+  opacity:
+    opacityValue:
+      inputValue: 1

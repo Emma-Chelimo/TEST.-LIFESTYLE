@@ -1,0 +1,18 @@
+key: Icon_4a9stjgd
+type: Icon
+props:
+  icon:
+    sizeValue:
+      inputValue: 24
+    colorValue:
+      inputValue:
+        themeColor: SECONDARY_BACKGROUND
+    iconDataValue:
+      inputValue:
+        codePoint: 58389
+        family: MaterialIcons
+        matchTextDirection: false
+        name: music_note
+  padding:
+    leftValue:
+      inputValue: 10

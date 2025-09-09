@@ -1,0 +1,46 @@
+key: Text_k2idg7hi
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: ue46ca8y
+    selectable: false
+    textValue:
+      variable:
+        source: LOCAL_STATE
+        defaultValue:
+          serializedValue: password
+        baseVariable:
+          localState:
+            fieldIdentifier:
+              name: password
+              key: wne8r
+            stateVariableType: WIDGET_CLASS_STATE
+        nodeKeyRef:
+          key: Scaffold_g7tugqih
+        uiBuilderValue:
+          serializedValue: password
+    fontWeightValue:
+      inputValue: w600
+  padding:
+    leftValue:
+      inputValue: 20
+  responsiveVisibility: {}
+  opacity:
+    opacityValue:
+      inputValue: 1
+    animatedOpacity: {}
+valueKey:
+  variable:
+    source: LOCAL_STATE
+    baseVariable:
+      localState:
+        fieldIdentifier:
+          name: password
+          key: wne8r
+        stateVariableType: WIDGET_CLASS_STATE
+    nodeKeyRef:
+      key: Scaffold_g7tugqih
+    uiBuilderValue:
+      serializedValue: .............

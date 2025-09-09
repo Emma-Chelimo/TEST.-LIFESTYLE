@@ -1,0 +1,12 @@
+key: Container_y0c72256
+type: Container
+props:
+  container:
+    dimensions:
+      width:
+        pixelsValue:
+          inputValue: Infinity
+      height:
+        pixelsValue:
+          inputValue: Infinity
+    boxDecoration: {}

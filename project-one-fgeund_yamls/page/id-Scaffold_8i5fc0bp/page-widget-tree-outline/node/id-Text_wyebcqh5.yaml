@@ -1,0 +1,18 @@
+key: Text_wyebcqh5
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: 9xoabwip
+    selectable: false
+    textValue:
+      inputValue: Tap to add post
+    colorValue:
+      inputValue:
+        themeColor: SECONDARY_BACKGROUND
+    fontWeightValue:
+      inputValue: w600
+  padding:
+    leftValue:
+      inputValue: 0

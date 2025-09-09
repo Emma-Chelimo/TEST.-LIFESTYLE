@@ -1,0 +1,30 @@
+key: Container_z09jp5vu
+type: Container
+props:
+  container:
+    dimensions:
+      width:
+        pixelsValue:
+          inputValue: Infinity
+      height:
+        pixelsValue:
+          inputValue: Infinity
+    boxDecoration:
+      boxShadow: {}
+      image:
+        type: FF_IMAGE_TYPE_ASSET
+        pathValue:
+          inputValue: projects/project-one-fgeund/assets/7irtf4sa79gw/53bb7ee361263b56c290ed2eaa1fe39b.jpg
+      colorValue:
+        inputValue:
+          value: "4280352861"
+      borderWidthValue:
+        inputValue: 0
+    maxDimensions: {}
+    minDimensions: {}
+  responsiveVisibility: {}
+  opacity:
+    opacityValue:
+      inputValue: 1
+    animatedOpacity: {}
+valueKey: {}

@@ -1,0 +1,84 @@
+node:
+  key: Scaffold_86w80txq
+  appBar:
+    key: AppBar_tjealui0
+    leading:
+      key: IconButton_26d9xoih
+    title:
+      key: Text_yidbwrfn
+  body:
+    key: Container_c51nx9mk
+    children:
+      - key: Column_gev6sivs
+        children:
+          - key: Row_3c5zs1jf
+            children:
+              - key: Container_qwjpv6j7
+                children:
+                  - key: Row_jyy4lue0
+                    children:
+                      - key: Text_nh0a2cdp
+                      - key: Icon_4a9stjgd
+              - key: Container_qa5ma2w4
+                children:
+                  - key: Row_dmzyh6os
+                    children:
+                      - key: Text_4efxjs92
+                      - key: Icon_0m9k2smb
+          - key: Row_fzz4biu7
+            children:
+              - key: Container_154nujya
+                children:
+                  - key: Row_fcuen250
+                    children:
+                      - key: Text_6j1zd2za
+                      - key: Icon_si37a30u
+              - key: Container_gqa7uv5w
+                children:
+                  - key: Row_rhl17m7r
+                    children:
+                      - key: Text_syuccr5c
+                      - key: Icon_xkd9e5pr
+          - key: Row_8irjpg3t
+            children:
+              - key: Text_yvlfnloq
+          - key: Row_2lsveo26
+            children:
+              - key: Container_i68myed1
+              - key: Container_8u3prj4w
+              - key: Container_5rxrilfh
+          - key: Row_2bo8nw30
+            children:
+              - key: Text_3y5cgfus
+              - key: Text_db99pa0t
+              - key: Text_caiq00yu
+          - key: Row_frcjqfs1
+            children:
+              - key: Container_6g6tdn0e
+              - key: Container_ypy4wzdy
+              - key: Container_5xsvqw6b
+          - key: Row_xuxwqref
+            children:
+              - key: Text_3m6v34jt
+              - key: Text_5d59rpr1
+              - key: Text_66se7mzu
+          - key: Row_ez13erug
+            children:
+              - key: Container_a3nmo865
+              - key: Container_2ui37xlu
+              - key: Container_iilspqrj
+          - key: Row_69phl42r
+            children:
+              - key: Text_t9fkqsb0
+              - key: Text_hueftnad
+              - key: Text_7yo919qe
+          - key: Row_zvbgkpsn
+            children:
+              - key: Container_lnweorjs
+                children:
+                  - key: Row_lspl3zx0
+                    children:
+                      - key: Image_5x7kz6bl
+                      - key: Text_2lcardgy
+                      - key: Icon_rwm9dogd
+                      - key: Icon_9zujleb4

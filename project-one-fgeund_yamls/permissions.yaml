@@ -1,0 +1,37 @@
+userDefinedPermissions:
+  - type: BLUETOOTH
+    message:
+      translationIdentifier:
+        key: c9cfde6g
+      textValue:
+        inputValue: Beats music requests access for bluetooth
+  - type: CAMERA
+    message:
+      translationIdentifier:
+        key: 5d24j6gm
+      textValue:
+        inputValue: Beats music requests access for camera and video
+  - type: CONTACTS
+    message:
+      translationIdentifier:
+        key: 6dekffen
+      textValue:
+        inputValue: Beats music requests access to your contacts
+  - type: MICROPHONE
+    message:
+      translationIdentifier:
+        key: l1c3fu47
+      textValue:
+        inputValue: Beats music requests access to tour microphone
+  - type: NOTIFICATIONS
+    message:
+      translationIdentifier:
+        key: j3h1dh7c
+      textValue:
+        inputValue: Beats music requests access to notifications
+  - type: CALENDAR
+    message:
+      translationIdentifier:
+        key: ja9pvuzw
+      textValue:
+        inputValue: Beats music requests access to biometrics

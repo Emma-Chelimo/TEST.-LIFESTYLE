@@ -1,0 +1,14 @@
+key: Text_yidbwrfn
+type: Text
+props:
+  text:
+    themeStyle: HEADLINE_MEDIUM
+    translationIdentifier:
+      key: 2xlh5z8y
+    textValue:
+      inputValue: Library
+    fontSizeValue:
+      inputValue: 22
+    colorValue:
+      inputValue:
+        value: "4294967295"

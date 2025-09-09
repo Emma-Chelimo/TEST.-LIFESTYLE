@@ -1,0 +1,20 @@
+key: Text_yvlfnloq
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: leubrkga
+    selectable: false
+    textValue:
+      inputValue: Recently added
+    colorValue:
+      inputValue:
+        themeColor: PRIMARY_TEXT
+    fontWeightValue:
+      inputValue: w600
+  padding:
+    leftValue:
+      inputValue: 20
+    topValue:
+      inputValue: 20

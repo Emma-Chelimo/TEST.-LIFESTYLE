@@ -1,0 +1,30 @@
+name: login
+description: ""
+node:
+  key: Scaffold_g7tugqih
+classModel:
+  stateFields:
+    - parameter:
+        identifier:
+          name: email
+          key: mfwbm
+        defaultValue:
+          serializedValue: ""
+        dataType:
+          scalarType: String
+          nonNullable: true
+        description: accept emails from users
+      serializedDefaultValue:
+        - "\" \""
+    - parameter:
+        identifier:
+          name: password
+          key: wne8r
+        defaultValue:
+          serializedValue: ""
+        dataType:
+          scalarType: String
+          nonNullable: true
+        description: for users to enter there secure passwords
+      serializedDefaultValue:
+        - "\" \""

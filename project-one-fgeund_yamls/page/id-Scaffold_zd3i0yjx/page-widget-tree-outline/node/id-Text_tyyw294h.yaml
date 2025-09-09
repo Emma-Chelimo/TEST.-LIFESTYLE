@@ -1,0 +1,45 @@
+key: Text_tyyw294h
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: cw2ivr26
+    selectable: false
+    textValue:
+      variable:
+        source: LOCAL_STATE
+        defaultValue:
+          serializedValue: email
+        baseVariable:
+          localState:
+            fieldIdentifier:
+              name: email
+              key: rfgpg
+            stateVariableType: WIDGET_CLASS_STATE
+        nodeKeyRef:
+          key: Scaffold_zd3i0yjx
+        uiBuilderValue:
+          serializedValue: email
+    fontWeightValue:
+      inputValue: w600
+  padding:
+    leftValue:
+      inputValue: 20
+    topValue:
+      inputValue: 20
+valueKey:
+  variable:
+    source: LOCAL_STATE
+    defaultValue:
+      serializedValue: "\" \""
+    baseVariable:
+      localState:
+        fieldIdentifier:
+          name: email
+          key: rfgpg
+        stateVariableType: WIDGET_CLASS_STATE
+    nodeKeyRef:
+      key: Scaffold_zd3i0yjx
+    uiBuilderValue:
+      serializedValue: you@email.com

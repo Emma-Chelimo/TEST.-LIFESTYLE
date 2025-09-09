@@ -1,0 +1,21 @@
+key: Container_rcjofz8g
+type: Container
+props:
+  container:
+    dimensions:
+      width:
+        pixelsValue:
+          inputValue: Infinity
+      height:
+        pixelsValue:
+          inputValue: Infinity
+    boxDecoration:
+      image:
+        type: FF_IMAGE_TYPE_ASSET
+        pathValue:
+          inputValue: projects/project-one-fgeund/assets/p6l42v8rgl6h/53bb7ee361263b56c290ed2eaa1fe39b.jpg
+      colorValue:
+        inputValue:
+          value: "4280352861"
+      borderWidthValue:
+        inputValue: 0

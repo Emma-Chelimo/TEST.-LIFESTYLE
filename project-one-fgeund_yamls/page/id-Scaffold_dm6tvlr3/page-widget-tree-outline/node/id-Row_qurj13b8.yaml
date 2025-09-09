@@ -1,0 +1,7 @@
+key: Row_qurj13b8
+type: Row
+props:
+  row: {}
+  padding:
+    topValue:
+      inputValue: 10

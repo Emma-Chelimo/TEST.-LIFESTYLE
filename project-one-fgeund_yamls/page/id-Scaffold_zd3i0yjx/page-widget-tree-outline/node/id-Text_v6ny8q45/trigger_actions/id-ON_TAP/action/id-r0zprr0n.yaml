@@ -1,0 +1,23 @@
+auth:
+  type: UPDATE_PASSWORD
+  passwordVariable:
+    source: LOCAL_STATE
+    baseVariable:
+      localState:
+        fieldIdentifier:
+          name: password
+          key: sbkq9
+        stateVariableType: WIDGET_CLASS_STATE
+    nodeKeyRef:
+      key: Scaffold_zd3i0yjx
+  confirmPasswordVariable:
+    source: LOCAL_STATE
+    baseVariable:
+      localState:
+        fieldIdentifier:
+          name: password
+          key: sbkq9
+        stateVariableType: WIDGET_CLASS_STATE
+    nodeKeyRef:
+      key: Scaffold_zd3i0yjx
+key: r0zprr0n

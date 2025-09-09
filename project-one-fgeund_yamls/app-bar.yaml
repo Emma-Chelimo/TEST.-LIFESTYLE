@@ -1,0 +1,24 @@
+templateType: BACK_BUTTON_LEFT_TITLE
+backgroundColor:
+  paletteColorName: Rich Black FOGRA 39
+elevation: 2
+defaultIcon:
+  sizeValue:
+    inputValue: 20
+  colorValue:
+    inputValue:
+      value: "4294967295"
+  iconDataValue:
+    inputValue:
+      codePoint: 62834
+      family: MaterialIcons
+      matchTextDirection: true
+      name: arrow_back_rounded
+textStyle:
+  themeStyle: HEADLINE_MEDIUM
+  fontSizeValue:
+    inputValue: 20
+  colorValue:
+    inputValue:
+      value: "4294967295"
+addOnNewPages: true

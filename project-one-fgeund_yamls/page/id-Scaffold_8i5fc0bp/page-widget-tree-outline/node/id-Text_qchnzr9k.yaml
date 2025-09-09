@@ -1,0 +1,17 @@
+key: Text_qchnzr9k
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: w8gn2nab
+    selectable: false
+    textValue:
+      inputValue: follow
+    fontSizeValue:
+      inputValue: 18
+    colorValue:
+      inputValue:
+        themeColor: SECONDARY_BACKGROUND
+    fontWeightValue:
+      inputValue: w600

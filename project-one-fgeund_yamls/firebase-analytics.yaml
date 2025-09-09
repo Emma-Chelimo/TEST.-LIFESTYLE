@@ -1,0 +1,3 @@
+enabled: true
+automaticEventSettings:
+  onAuth: true

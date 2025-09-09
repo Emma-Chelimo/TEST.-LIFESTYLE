@@ -1,0 +1,16 @@
+key: Column_9dgpqcos
+type: Column
+props:
+  column:
+    primary: true
+    listSpacing:
+      applyStartEndSpace: true
+  padding:
+    rightValue:
+      inputValue: 1
+  responsiveVisibility: {}
+  opacity:
+    opacityValue:
+      inputValue: 1
+    animatedOpacity: {}
+valueKey: {}

@@ -1,0 +1,63 @@
+key: Icon_1z84yfvt
+type: Icon
+props:
+  icon:
+    sizeValue:
+      inputValue: 24
+    colorValue:
+      inputValue:
+        themeColor: PRIMARY_TEXT
+    iconDataValue:
+      inputValue:
+        codePoint: 62051
+        family: MaterialIcons
+        matchTextDirection: false
+        name: pause_outlined
+  visibility:
+    visibleValue:
+      variable:
+        source: FUNCTION_CALL
+        functionCall:
+          conditionalValue:
+            ifConditionalValues:
+              - condition:
+                  source: LOCAL_STATE
+                  baseVariable:
+                    localState:
+                      fieldIdentifier:
+                        name: isplaying
+                        key: 1re75
+                      stateVariableType: WIDGET_CLASS_STATE
+                  nodeKeyRef:
+                    key: Scaffold_m2t6ahy1
+                value:
+                  variable:
+                    source: CONSTANTS
+                    baseVariable:
+                      constants:
+                        value: "TRUE"
+            elseValue:
+              variable:
+                source: CONSTANTS
+                baseVariable:
+                  constants:
+                    value: "FALSE"
+                uiBuilderValue:
+                  serializedValue: "true"
+            returnParameter:
+              dataType:
+                scalarType: Boolean
+      mostRecentInputValue: true
+valueKey:
+  variable:
+    source: LOCAL_STATE
+    defaultValue:
+      serializedValue: "true"
+    baseVariable:
+      localState:
+        fieldIdentifier:
+          name: isplaying
+          key: 1re75
+        stateVariableType: WIDGET_CLASS_STATE
+    nodeKeyRef:
+      key: Scaffold_m2t6ahy1

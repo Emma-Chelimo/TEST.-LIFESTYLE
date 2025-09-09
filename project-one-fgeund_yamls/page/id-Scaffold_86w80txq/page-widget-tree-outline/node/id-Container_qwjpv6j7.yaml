@@ -1,0 +1,26 @@
+key: Container_qwjpv6j7
+type: Container
+props:
+  container:
+    dimensions:
+      width:
+        pixelsValue:
+          inputValue: 150
+      height:
+        pixelsValue:
+          inputValue: 60
+    boxDecoration:
+      borderRadius:
+        topLeftValue:
+          inputValue: 25
+        topRightValue:
+          inputValue: 25
+        bottomLeftValue:
+          inputValue: 25
+        bottomRightValue:
+          inputValue: 25
+      colorValue:
+        inputValue:
+          themeColor: ERROR
+    animationDurationValue:
+      inputValue: 100

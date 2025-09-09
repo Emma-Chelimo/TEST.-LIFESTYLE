@@ -1,0 +1,18 @@
+key: Icon_c8btgeh0
+type: Icon
+props:
+  icon:
+    sizeValue:
+      inputValue: 20
+    colorValue:
+      inputValue:
+        themeColor: PRIMARY_TEXT
+    iconDataValue:
+      inputValue:
+        codePoint: 62051
+        family: MaterialIcons
+        matchTextDirection: false
+        name: pause_outlined
+  padding:
+    leftValue:
+      inputValue: 40

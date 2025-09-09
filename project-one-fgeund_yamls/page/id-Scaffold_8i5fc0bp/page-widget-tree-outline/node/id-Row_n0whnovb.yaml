@@ -1,0 +1,14 @@
+key: Row_n0whnovb
+type: Row
+props:
+  row:
+    listSpacing: {}
+  padding:
+    topValue:
+      inputValue: 20
+  responsiveVisibility: {}
+  opacity:
+    opacityValue:
+      inputValue: 1
+    animatedOpacity: {}
+valueKey: {}

@@ -1,0 +1,10 @@
+rootAction:
+  key: t28br824
+  action:
+    key: qrm8viaj
+  followUpAction:
+    key: kdsk1c7v
+    action:
+      key: mxydnhc8
+trigger:
+  triggerType: ON_TAP

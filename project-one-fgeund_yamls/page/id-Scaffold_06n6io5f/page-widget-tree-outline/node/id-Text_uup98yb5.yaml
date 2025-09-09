@@ -1,0 +1,14 @@
+key: Text_uup98yb5
+type: Text
+props:
+  text:
+    themeStyle: HEADLINE_MEDIUM
+    translationIdentifier:
+      key: nmlhh2ou
+    textValue:
+      inputValue: Page Title
+    fontSizeValue:
+      inputValue: 20
+    colorValue:
+      inputValue:
+        value: "4294967295"

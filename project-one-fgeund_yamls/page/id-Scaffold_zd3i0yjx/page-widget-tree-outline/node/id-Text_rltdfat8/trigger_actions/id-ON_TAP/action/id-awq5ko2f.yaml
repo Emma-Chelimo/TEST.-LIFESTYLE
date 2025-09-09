@@ -1,0 +1,12 @@
+navigate:
+  allowBack: true
+  passedParameters:
+    widgetClassNodeKeyRef:
+      key: Scaffold_g7tugqih
+  isNavigateBack: false
+  transition:
+    transitionType: INSTANT
+  replaceRoute: true
+  pageNodeKeyRef:
+    key: Scaffold_g7tugqih
+key: awq5ko2f

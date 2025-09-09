@@ -1,0 +1,25 @@
+key: Container_jgolli2y
+type: Container
+props:
+  container:
+    dimensions:
+      width:
+        pixelsValue:
+          inputValue: 500
+      height:
+        pixelsValue:
+          inputValue: 600
+    boxDecoration:
+      borderRadius:
+        topLeftValue:
+          inputValue: 25
+        topRightValue:
+          inputValue: 25
+      colorValue:
+        inputValue:
+          themeColor: PRIMARY_TEXT
+    animationDurationValue:
+      inputValue: 100
+  opacity:
+    opacityValue:
+      inputValue: 0.6

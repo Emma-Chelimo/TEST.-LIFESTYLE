@@ -1,0 +1,43 @@
+key: Scaffold_8i5fc0bp
+type: Scaffold
+props:
+  scaffold:
+    safeArea: true
+    navBarItem:
+      navIcon:
+        sizeValue:
+          inputValue: 24
+        colorValue:
+          inputValue:
+            value: "4288585374"
+        iconDataValue:
+          inputValue:
+            codePoint: 58513
+            family: MaterialIcons
+            matchTextDirection: false
+            name: person
+      navActiveIcon:
+        sizeValue:
+          inputValue: 24
+        colorValue:
+          inputValue:
+            themeColor: PRIMARY
+        iconDataValue:
+          inputValue:
+            codePoint: 58136
+            family: MaterialIcons
+            matchTextDirection: false
+            name: home
+      show: true
+      differentActiveIcon: false
+      label:
+        translationIdentifier:
+          key: 2rw2y1hb
+        textValue:
+          inputValue: Profile
+      alwaysShowNavBar: true
+    hideKeyboardOnTap: true
+    backgroundColorValue:
+      inputValue:
+        themeColor: PRIMARY_BACKGROUND
+name: profilepg

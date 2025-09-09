@@ -1,0 +1,18 @@
+key: AppBar_nz9kq2lj
+type: AppBar
+props:
+  appBar:
+    height:
+      pixelsValue:
+        inputValue: 10
+    templateType: LARGE_HEADER
+    titleInFlexibleSpaceBar: false
+    defaultBackButtonValue:
+      inputValue: false
+    backgroundColorValue:
+      inputValue:
+        paletteColorName: Rich Black FOGRA 39
+    elevationValue:
+      inputValue: 2
+    centerTitleValue:
+      inputValue: false

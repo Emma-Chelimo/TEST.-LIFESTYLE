@@ -1,0 +1,28 @@
+key: Text_dmybh30v
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: 3zk0r6jg
+    selectable: false
+    textValue:
+      inputValue: Song
+    fontWeightValue:
+      inputValue: w700
+  padding:
+    leftValue:
+      inputValue: 80
+    topValue:
+      inputValue: 0
+  alignment:
+    xValue:
+      inputValue: 0
+    yValue:
+      inputValue: 0
+  responsiveVisibility: {}
+  opacity:
+    opacityValue:
+      inputValue: 1
+    animatedOpacity: {}
+valueKey: {}

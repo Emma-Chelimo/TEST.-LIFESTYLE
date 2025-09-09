@@ -1,0 +1,20 @@
+key: Text_ovhkp4g9
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: mwnreu28
+    selectable: false
+    textValue:
+      inputValue: Your Playlists
+    fontSizeValue:
+      inputValue: 20
+    colorValue:
+      inputValue:
+        themeColor: PRIMARY_BACKGROUND
+    fontWeightValue:
+      inputValue: w600
+  padding:
+    leftValue:
+      inputValue: 20

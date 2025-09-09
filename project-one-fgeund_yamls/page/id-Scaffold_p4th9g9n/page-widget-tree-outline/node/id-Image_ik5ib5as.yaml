@@ -1,0 +1,28 @@
+key: Image_ik5ib5as
+type: Image
+props:
+  image:
+    type: FF_IMAGE_TYPE_NETWORK
+    fit: FF_BOX_FIT_COVER
+    dimensions:
+      width:
+        pixelsValue:
+          inputValue: 200
+      height:
+        pixelsValue:
+          inputValue: 200
+    borderRadius:
+      type: FF_BORDER_RADIUS_ONLY
+      bottomLeftValue:
+        inputValue: 125
+      bottomRightValue:
+        inputValue: 125
+      allValue:
+        inputValue: 8
+    cacheFadeDuration: 500
+    pathValue:
+      inputValue: https://picsum.photos/seed/205/600
+    format: FF_IMAGE_FORMAT_AUTO
+  opacity:
+    opacityValue:
+      inputValue: 1

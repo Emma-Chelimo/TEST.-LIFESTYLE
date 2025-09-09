@@ -1,0 +1,16 @@
+key: Text_5093fxru
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: dh4lxyri
+    selectable: false
+    textValue:
+      inputValue: "3 : 00"
+    colorValue:
+      inputValue:
+        themeColor: PRIMARY_BACKGROUND
+  padding:
+    leftValue:
+      inputValue: 280

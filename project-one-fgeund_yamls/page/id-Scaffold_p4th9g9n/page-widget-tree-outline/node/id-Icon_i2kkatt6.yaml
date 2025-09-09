@@ -1,0 +1,18 @@
+key: Icon_i2kkatt6
+type: Icon
+props:
+  icon:
+    sizeValue:
+      inputValue: 24
+    colorValue:
+      inputValue:
+        themeColor: PRIMARY_BACKGROUND
+    iconDataValue:
+      inputValue:
+        codePoint: 983443
+        family: MaterialIcons
+        matchTextDirection: false
+        name: skip_previous_rounded
+  padding:
+    leftValue:
+      inputValue: 100

@@ -1,0 +1,18 @@
+key: Icon_z16z6ss9
+type: Icon
+props:
+  icon:
+    sizeValue:
+      inputValue: 40
+    colorValue:
+      inputValue:
+        themeColor: PRIMARY_BACKGROUND
+    iconDataValue:
+      inputValue:
+        codePoint: 60276
+        family: MaterialIcons
+        matchTextDirection: false
+        name: pause_circle_outline_sharp
+  padding:
+    leftValue:
+      inputValue: 50

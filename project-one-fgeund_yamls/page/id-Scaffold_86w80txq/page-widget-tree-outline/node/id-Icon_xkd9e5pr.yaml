@@ -1,0 +1,18 @@
+key: Icon_xkd9e5pr
+type: Icon
+props:
+  icon:
+    sizeValue:
+      inputValue: 24
+    colorValue:
+      inputValue:
+        themeColor: SECONDARY_BACKGROUND
+    iconDataValue:
+      inputValue:
+        codePoint: 63288
+        family: MaterialIcons
+        matchTextDirection: false
+        name: favorite_rounded
+  padding:
+    leftValue:
+      inputValue: 10

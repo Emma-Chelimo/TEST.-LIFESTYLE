@@ -1,0 +1,32 @@
+key: Container_xwvp7103
+type: Container
+props:
+  container:
+    dimensions:
+      width:
+        pixelsValue:
+          inputValue: 400
+      height:
+        pixelsValue:
+          inputValue: 290
+    boxDecoration:
+      borderRadius:
+        topLeftValue:
+          inputValue: 35
+        topRightValue:
+          inputValue: 35
+        bottomLeftValue:
+          inputValue: 35
+        bottomRightValue:
+          inputValue: 35
+      colorValue:
+        inputValue:
+          themeColor: ERROR
+    animationDurationValue:
+      inputValue: 100
+  padding:
+    topValue:
+      inputValue: 20
+  opacity:
+    opacityValue:
+      inputValue: 0.8

@@ -1,0 +1,18 @@
+active: true
+firebase:
+  createUserDocument:
+    collectionIdentifier:
+      name: users
+      key: x1lx14ot
+    write:
+      updates: {}
+firebaseConfigFileInfos:
+  - androidPath: users/Y1daO3TBn9dGInpXd0IllhGVbI93/projects/project-one-fgeund/configs/laq08dxb0nel/google-services.json
+    iosPath: users/Y1daO3TBn9dGInpXd0IllhGVbI93/projects/project-one-fgeund/configs/nd31607b0kwc/GoogleService-Info.plist
+    webConfig: "\/\/ Copy and paste this into your JavaScript code to initialize the Firebase SDK.\n\/\/ You will also need to load the Firebase SDK.\n\/\/ See https:\/\/firebase.google.com\/docs\/web\/setup for more details.\n\nfirebase.initializeApp({\n  \"projectId\": \"project-one-fgeund\",\n  \"appId\": \"1:675312002140:web:5bb0f8fa6018a6676ef299\",\n  \"storageBucket\": \"project-one-fgeund.firebasestorage.app\",\n  \"apiKey\": \"AIzaSyCaDH_S2mIOgPxgQG0hLptVo3dXp-xzPgQ\",\n  \"authDomain\": \"project-one-fgeund.firebaseapp.com\",\n  \"messagingSenderId\": \"675312002140\"\n});\n"
+    androidPackageNames:
+      - com.mycompany.projectone
+    iosBundleId: com.mycompany.projectone
+    environment:
+      name: Production
+      key: PROD

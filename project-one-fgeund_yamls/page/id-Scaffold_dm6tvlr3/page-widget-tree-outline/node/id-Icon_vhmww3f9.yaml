@@ -1,0 +1,18 @@
+key: Icon_vhmww3f9
+type: Icon
+props:
+  icon:
+    sizeValue:
+      inputValue: 20
+    colorValue:
+      inputValue:
+        themeColor: PRIMARY_TEXT
+    iconDataValue:
+      inputValue:
+        codePoint: 58727
+        family: MaterialIcons
+        matchTextDirection: false
+        name: search
+  padding:
+    leftValue:
+      inputValue: 90

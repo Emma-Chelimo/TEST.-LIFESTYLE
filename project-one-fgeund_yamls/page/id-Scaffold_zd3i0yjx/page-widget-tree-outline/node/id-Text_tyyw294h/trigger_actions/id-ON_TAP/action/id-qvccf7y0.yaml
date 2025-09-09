@@ -1,0 +1,13 @@
+auth:
+  type: UPDATE_EMAIL
+  emailVariable:
+    source: LOCAL_STATE
+    baseVariable:
+      localState:
+        fieldIdentifier:
+          name: email
+          key: rfgpg
+        stateVariableType: WIDGET_CLASS_STATE
+    nodeKeyRef:
+      key: Scaffold_zd3i0yjx
+key: qvccf7y0

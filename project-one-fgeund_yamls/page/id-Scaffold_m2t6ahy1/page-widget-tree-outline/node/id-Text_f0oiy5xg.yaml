@@ -1,0 +1,13 @@
+key: Text_f0oiy5xg
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: vttusw49
+    selectable: false
+    textValue:
+      inputValue: Album
+    colorValue:
+      inputValue:
+        themeColor: PRIMARY_BACKGROUND

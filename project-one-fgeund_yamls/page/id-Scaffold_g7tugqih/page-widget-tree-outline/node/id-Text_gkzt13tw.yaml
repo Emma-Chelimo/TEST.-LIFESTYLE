@@ -1,0 +1,17 @@
+key: Text_gkzt13tw
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: qlkakz9m
+    selectable: false
+    textValue:
+      inputValue: Login
+    fontWeightValue:
+      inputValue: w600
+  padding:
+    leftValue:
+      inputValue: 30
+    topValue:
+      inputValue: 10

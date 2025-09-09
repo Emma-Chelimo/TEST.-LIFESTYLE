@@ -1,0 +1,16 @@
+key: h9ezqija
+uploadData:
+  settings:
+    allowedTypes:
+      photo: true
+      video: false
+      file: false
+    maxResolution:
+      width: 16
+      height: 9
+    source: GALLERY_OR_CAMERA
+    galleryOrCameraPickerStyle: {}
+    showSnackBar: false
+    localFileVariable: {}
+  destination: FIREBASE
+  actionName: UploadData_3xk

@@ -1,0 +1,15 @@
+identifier:
+  name: customfunctionauth
+  key: sk6zi
+arguments:
+  - identifier:
+      name: auth
+      key: 0z8m5u
+    dataType:
+      scalarType: JSON
+      nonNullable: false
+returnParameter:
+  dataType:
+    scalarType: JSON
+    nonNullable: false
+description: ""

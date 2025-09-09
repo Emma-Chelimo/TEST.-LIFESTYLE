@@ -1,0 +1,31 @@
+key: Image_2trg7meq
+type: Image
+props:
+  image:
+    type: FF_IMAGE_TYPE_ASSET
+    fit: FF_BOX_FIT_COVER
+    dimensions:
+      width:
+        pixelsValue:
+          inputValue: 40
+      height:
+        pixelsValue:
+          inputValue: 40
+    borderRadius:
+      type: FF_BORDER_RADIUS_ALL
+      allValue:
+        inputValue: 8
+    cacheFadeDuration: 500
+    pathValue:
+      inputValue: projects/project-one-fgeund/assets/svi1p5occuwf/asap.jpg
+    format: FF_IMAGE_FORMAT_AUTO
+  padding:
+    leftValue:
+      inputValue: 10
+  responsiveVisibility: {}
+  opacity:
+    opacityValue:
+      inputValue: 1
+    animatedOpacity: {}
+parameterValues: {}
+valueKey: {}

@@ -1,0 +1,15 @@
+database:
+  updateDocument:
+    write:
+      updates:
+        display_name:
+          fieldIdentifier:
+            name: display_name
+          fieldValue:
+            fieldValue: DELETE
+    reference:
+      source: FIREBASE_AUTH_USER
+      baseVariable:
+        auth:
+          property: USER_REFERENCE
+key: gdlolhvb

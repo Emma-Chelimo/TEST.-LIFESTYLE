@@ -1,0 +1,16 @@
+key: qrm8viaj
+uploadData:
+  settings:
+    allowedTypes:
+      photo: true
+      video: false
+      file: false
+    maxResolution:
+      width: 6
+      height: 6
+    source: GALLERY_OR_CAMERA
+    galleryOrCameraPickerStyle: {}
+    showSnackBar: false
+    localFileVariable: {}
+  destination: FIREBASE
+  actionName: UploadData_gye

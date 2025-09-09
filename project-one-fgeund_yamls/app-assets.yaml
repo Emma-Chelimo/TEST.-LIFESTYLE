@@ -1,0 +1,14 @@
+appIconPath: "projects\/project-one-fgeund\/assets\/u13c7o5r2lx7\/ChatGPT_Image_Aug_27,_2025,_11_02_43_AM.png"
+splashImage:
+  path: projects/project-one-fgeund/assets/aegxuutm7utd/6426b3c84bd07f5104371b0f1d7b3478.jpg
+  fit: FF_BOX_FIT_COVER
+  dimensions:
+    width: {}
+    height: {}
+  backgroundColor:
+    value: "0"
+  minSplashScreenDuration: 300
+errorImagePath: projects/project-one-fgeund/assets/5zd0h2lyczin/53bb7ee361263b56c290ed2eaa1fe39b.jpg
+androidAdaptiveIcon:
+  foregroundImagePath: "projects\/project-one-fgeund\/assets\/dftm740ubmjc\/ChatGPT_Image_Aug_26,_2025,_02_33_36_PM.png"
+  backgroundColor: {}

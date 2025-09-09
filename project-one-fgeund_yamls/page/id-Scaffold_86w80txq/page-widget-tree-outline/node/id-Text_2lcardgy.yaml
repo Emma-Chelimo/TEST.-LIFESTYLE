@@ -1,0 +1,15 @@
+key: Text_2lcardgy
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: g3jkck2q
+    selectable: false
+    textValue:
+      inputValue: Song
+    fontWeightValue:
+      inputValue: w600
+  padding:
+    leftValue:
+      inputValue: 20

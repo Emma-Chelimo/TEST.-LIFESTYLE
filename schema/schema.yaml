@@ -1,0 +1,242 @@
+ identifier:
+    name: getspotifyaccesstoken
+    key: pyvkc
+  url: https://accounts.spotify.com/api/token
+  callType: POST
+  bodyType: X_WWW_FORM_URL_ENCODED
+  headers:
+    - "Content-type: application\/x-www-form-urlencoded"
+    - "Authorization: Basic [client_id: 70cee4db414d442093c5729ae40c5841 client_scret: 6724560c19b44f888848d953ad563e08"
+  endpointSettings:
+    isPrivateApi: false
+    requireAuthentication: true
+    escapeVariablesInRequestBody: true
+  parameters:
+    - identifier:
+        name: grant-type=client_credentials
+        key: 0qsfvqo6
+      specifiedValue: client_credentials
+      type: String
+
+  identifier:
+    name: searchspotify
+    key: wtf8d
+  url: https://api.spotify.com/v1/search
+  callType: GET
+  headers:
+    - "Authorization: Bearer "
+  endpointSettings:
+    escapeVariablesInRequestBody: true
+  parameters:
+    - identifier:
+        name: query
+        key: ae2utk55
+      specifiedValue: type=track
+      type: String
+
+  identifier:
+    name: users
+    key: x1lx14ot
+  fields:
+    email:
+      identifier:
+        name: email
+      dataType:
+        scalarType: String
+    display_name:
+      identifier:
+        name: display_name
+      dataType:
+        scalarType: String
+    photo_url:
+      identifier:
+        name: photo_url
+      dataType:
+        scalarType: ImagePath
+    uid:
+      identifier:
+        name: uid
+      dataType:
+        scalarType: String
+    created_time:
+      identifier:
+        name: created_time
+      dataType:
+        scalarType: DateTime
+    phone_number:
+      identifier:
+        name: phone_number
+      dataType:
+        scalarType: String
+    likes:
+      identifier:
+        name: likes
+      dataType:
+        listType:
+          scalarType: Integer
+    followers:
+      identifier:
+        name: followers
+      dataType:
+        listType:
+          scalarType: DocumentReference
+        subType:
+          collectionIdentifier:
+            name: users
+            key: x1lx14ot
+    following:
+      identifier:
+        name: following
+      dataType:
+        listType:
+          scalarType: DocumentReference
+        subType:
+          collectionIdentifier:
+            name: users
+            key: x1lx14ot
+    posts:
+      identifier:
+        name: posts
+      dataType:
+        listType:
+          scalarType: ImagePath
+
+  type: MAIN
+  isUnlocked: false
+  parameters: {}
+
+  identifier:
+    name: customfunctionauth
+    key: sk6zi
+  arguments:
+    - identifier:
+        name: auth
+        key: 0z8m5u
+      dataType:
+        scalarType: JSON
+        nonNullable: false
+  returnParameter:
+    dataType:
+      scalarType: JSON
+      nonNullable: false
+  description: ""
+
+  primary:
+    value: "4283120111"
+    darkModeColor:
+      value: "4283120111"
+      darkModeColor:
+        value: "4283120111"
+  secondary:
+    value: "4281979584"
+    darkModeColor:
+      value: "4281979584"
+      darkModeColor:
+        value: "4281979584"
+  tertiary:
+    value: "4293823328"
+    darkModeColor:
+      value: "4293823328"
+      darkModeColor:
+        value: "4293823328"
+  customPaletteColors:
+    - value: "4278650631"
+      paletteColorName: Rich Black FOGRA 39
+      darkModeColor:
+        value: "4278650631"
+    - value: "4282001630"
+      paletteColorName: Blue
+      darkModeColor:
+        value: "4282001630"
+    - value: "4281651647"
+      paletteColorName: Turquoise
+      darkModeColor:
+        value: "4281651647"
+    - value: "4293914607"
+      paletteColorName: Cultured
+      darkModeColor:
+        value: "4293914607"
+    - value: "4291900507"
+      paletteColorName: Cerise
+      darkModeColor:
+        value: "4291900507"
+  darkModeEnabled: true
+  alternate:
+    value: "4292928487"
+    darkModeColor:
+      value: "4280692020"
+      darkModeColor:
+        value: "4280692020"
+  primaryBackground:
+    value: "4294046968"
+    darkModeColor:
+      value: "4280099880"
+      darkModeColor:
+        value: "4280099880"
+  secondaryBackground:
+    value: "4294967295"
+    darkModeColor:
+      value: "4279506971"
+      darkModeColor:
+        value: "4279506971"
+  primaryText:
+    value: "4279506971"
+    darkModeColor:
+      value: "4294967295"
+      darkModeColor:
+        value: "4294967295"
+  secondaryText:
+    value: "4283917164"
+    darkModeColor:
+      value: "4287996332"
+      darkModeColor:
+        value: "4287996332"
+  displayDarkMode: false
+  accent1:
+    value: "1279998447"
+    darkModeColor:
+      value: "1279998447"
+      darkModeColor:
+        value: "1279998447"
+  accent2:
+    value: "1295635136"
+    darkModeColor:
+      value: "1295635136"
+      darkModeColor:
+        value: "1295635136"
+  accent3:
+    value: "1307478880"
+    darkModeColor:
+      value: "1307478880"
+      darkModeColor:
+        value: "1307478880"
+  accent4:
+    value: "3439329279"
+    darkModeColor:
+      value: "2988846388"
+      darkModeColor:
+        value: "2988846388"
+  success:
+    value: "4280587913"
+    darkModeColor:
+      value: "4280587913"
+      darkModeColor:
+        value: "4280587913"
+  warning:
+    value: "4294561624"
+    darkModeColor:
+      value: "4294561624"
+      darkModeColor:
+        value: "4294561624"
+  error:
+    value: "4294924643"
+    darkModeColor:
+      value: "4294924643"
+      darkModeColor:
+        value: "4294924643"
+  info:
+    value: "4294967295"
+    darkModeColor:
+      value: "4294967295"
+      darkModeColor:
+        value: "4294967295"

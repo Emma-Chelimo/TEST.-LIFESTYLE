@@ -1,0 +1,18 @@
+key: Icon_gs9mk8ff
+type: Icon
+props:
+  icon:
+    sizeValue:
+      inputValue: 20
+    colorValue:
+      inputValue:
+        themeColor: SECONDARY_BACKGROUND
+    iconDataValue:
+      inputValue:
+        codePoint: 63047
+        family: MaterialIcons
+        matchTextDirection: false
+        name: close_rounded
+  padding:
+    leftValue:
+      inputValue: 330

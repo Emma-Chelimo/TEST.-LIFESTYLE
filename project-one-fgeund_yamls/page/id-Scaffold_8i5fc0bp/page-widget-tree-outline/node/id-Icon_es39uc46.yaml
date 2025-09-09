@@ -1,0 +1,18 @@
+key: Icon_es39uc46
+type: Icon
+props:
+  icon:
+    sizeValue:
+      inputValue: 24
+    colorValue:
+      inputValue:
+        themeColor: SECONDARY_BACKGROUND
+    iconDataValue:
+      inputValue:
+        codePoint: 983220
+        family: MaterialIcons
+        matchTextDirection: false
+        name: post_add_rounded
+  padding:
+    leftValue:
+      inputValue: 30

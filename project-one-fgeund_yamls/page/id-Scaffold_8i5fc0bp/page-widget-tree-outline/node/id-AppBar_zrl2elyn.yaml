@@ -1,0 +1,15 @@
+key: AppBar_zrl2elyn
+type: AppBar
+props:
+  appBar:
+    templateType: LARGE_HEADER
+    titleInFlexibleSpaceBar: false
+    defaultBackButtonValue:
+      inputValue: false
+    backgroundColorValue:
+      inputValue:
+        paletteColorName: Rich Black FOGRA 39
+    elevationValue:
+      inputValue: 2
+    centerTitleValue:
+      inputValue: false

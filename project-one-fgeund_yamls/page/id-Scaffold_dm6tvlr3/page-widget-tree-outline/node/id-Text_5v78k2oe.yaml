@@ -1,0 +1,28 @@
+key: Text_5v78k2oe
+type: Text
+props:
+  text:
+    fontFamily: Island Moments
+    themeStyle: BODY_MEDIUM
+    isCustomFont: false
+    translationIdentifier:
+      key: 7nfemu1b
+    selectable: false
+    textValue:
+      inputValue: B
+    fontSizeValue:
+      inputValue: 50
+    colorValue:
+      inputValue:
+        value: "4292939308"
+    italicValue:
+      inputValue: true
+  padding:
+    topValue:
+      inputValue: 250
+  responsiveVisibility: {}
+  opacity:
+    opacityValue:
+      inputValue: 1
+    animatedOpacity: {}
+valueKey: {}

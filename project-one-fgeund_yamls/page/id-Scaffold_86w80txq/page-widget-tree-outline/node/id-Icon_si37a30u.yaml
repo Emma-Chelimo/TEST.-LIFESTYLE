@@ -1,0 +1,18 @@
+key: Icon_si37a30u
+type: Icon
+props:
+  icon:
+    sizeValue:
+      inputValue: 24
+    colorValue:
+      inputValue:
+        themeColor: SECONDARY_BACKGROUND
+    iconDataValue:
+      inputValue:
+        codePoint: 58580
+        family: MaterialIcons
+        matchTextDirection: false
+        name: playlist_play
+  padding:
+    leftValue:
+      inputValue: 10

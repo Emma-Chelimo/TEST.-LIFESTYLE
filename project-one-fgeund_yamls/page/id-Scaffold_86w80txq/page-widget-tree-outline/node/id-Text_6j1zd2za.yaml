@@ -1,0 +1,17 @@
+key: Text_6j1zd2za
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: 42laj7f6
+    selectable: false
+    textValue:
+      inputValue: Playlists
+    fontSizeValue:
+      inputValue: 20
+    colorValue:
+      inputValue:
+        themeColor: SECONDARY_BACKGROUND
+    fontWeightValue:
+      inputValue: w600

@@ -1,0 +1,17 @@
+key: Text_4efxjs92
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: n8tq9gzt
+    selectable: false
+    textValue:
+      inputValue: Albums
+    fontSizeValue:
+      inputValue: 20
+    colorValue:
+      inputValue:
+        themeColor: SECONDARY_BACKGROUND
+    fontWeightValue:
+      inputValue: w600

@@ -1,0 +1,24 @@
+snackBar:
+  textMessage:
+    variable:
+      source: CONSTANTS
+      baseVariable:
+        constants:
+          value: "FALSE"
+      dynamicComponentAccess: {}
+  textStyle:
+    variableColor:
+      inputValue:
+        color:
+          themeColor: PRIMARY_TEXT
+  durationMillis: 4000
+  subAction:
+    action:
+      navigate:
+        allowBack: true
+  shouldHidePreviousSnackbar: false
+  backgroundColor:
+    inputValue:
+      color:
+        themeColor: SECONDARY
+key: vgk3qp3x

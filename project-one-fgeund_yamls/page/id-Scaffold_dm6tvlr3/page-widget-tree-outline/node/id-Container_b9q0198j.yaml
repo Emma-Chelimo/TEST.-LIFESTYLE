@@ -1,0 +1,42 @@
+key: Container_b9q0198j
+type: Container
+props:
+  container:
+    dimensions:
+      width:
+        pixelsValue:
+          inputValue: 350
+      height:
+        pixelsValue:
+          inputValue: 60
+    boxDecoration:
+      borderRadius:
+        topLeftValue:
+          inputValue: 25
+        topRightValue:
+          inputValue: 25
+        bottomLeftValue:
+          inputValue: 25
+        bottomRightValue:
+          inputValue: 25
+      boxShadow: {}
+      image: {}
+      colorValue:
+        inputValue:
+          value: "4289992378"
+      borderColorValue:
+        inputValue:
+          value: "4282783823"
+    maxDimensions: {}
+    minDimensions: {}
+    animationDurationValue:
+      inputValue: 100
+  padding:
+    topValue:
+      inputValue: 240
+  responsiveVisibility: {}
+  opacity:
+    opacityValue:
+      inputValue: 0.8
+    animatedOpacity: {}
+valueKey: {}

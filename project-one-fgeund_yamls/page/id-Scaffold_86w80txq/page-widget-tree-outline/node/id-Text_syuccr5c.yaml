@@ -1,0 +1,17 @@
+key: Text_syuccr5c
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: ulvg8t63
+    selectable: false
+    textValue:
+      inputValue: Favorites
+    fontSizeValue:
+      inputValue: 20
+    colorValue:
+      inputValue:
+        themeColor: SECONDARY_BACKGROUND
+    fontWeightValue:
+      inputValue: w600

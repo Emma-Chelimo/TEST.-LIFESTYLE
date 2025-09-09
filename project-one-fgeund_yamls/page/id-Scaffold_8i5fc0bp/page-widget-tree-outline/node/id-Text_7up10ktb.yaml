@@ -1,0 +1,19 @@
+key: Text_7up10ktb
+type: Text
+props:
+  text:
+    themeStyle: HEADLINE_MEDIUM
+    translationIdentifier:
+      key: i5drd5l2
+    textValue:
+      inputValue: Profile
+    fontSizeValue:
+      inputValue: 22
+    colorValue:
+      inputValue:
+        value: "4294967295"
+    textAlignValue:
+      inputValue: ALIGN_START
+  padding:
+    leftValue:
+      inputValue: 150

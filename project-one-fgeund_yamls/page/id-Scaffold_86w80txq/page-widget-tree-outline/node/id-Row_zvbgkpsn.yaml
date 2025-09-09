@@ -1,0 +1,8 @@
+key: Row_zvbgkpsn
+type: Row
+props:
+  row:
+    mainAxisAlignment: main_axis_center
+  padding:
+    topValue:
+      inputValue: 10

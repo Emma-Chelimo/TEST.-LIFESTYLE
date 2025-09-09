@@ -1,0 +1,30 @@
+name: SignIn
+description: ""
+node:
+  key: Scaffold_zd3i0yjx
+pageRouteSettings:
+  onlyAuthenticated: false
+classModel:
+  stateFields:
+    - parameter:
+        identifier:
+          name: email
+          key: rfgpg
+        defaultValue:
+          serializedValue: ""
+        dataType:
+          scalarType: String
+          nonNullable: true
+      serializedDefaultValue:
+        - "\" \""
+    - parameter:
+        identifier:
+          name: password
+          key: sbkq9
+        defaultValue:
+          serializedValue: ""
+        dataType:
+          scalarType: String
+          nonNullable: true
+      serializedDefaultValue:
+        - "\" \""

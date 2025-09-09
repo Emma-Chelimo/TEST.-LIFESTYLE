@@ -1,0 +1,43 @@
+key: Scaffold_m2t6ahy1
+type: Scaffold
+props:
+  scaffold:
+    safeArea: true
+    navBarItem:
+      navIcon:
+        sizeValue:
+          inputValue: 24
+        colorValue:
+          inputValue:
+            value: "4288585374"
+        iconDataValue:
+          inputValue:
+            codePoint: 61703
+            family: MaterialIcons
+            matchTextDirection: false
+            name: home_outlined
+      navActiveIcon:
+        sizeValue:
+          inputValue: 24
+        colorValue:
+          inputValue:
+            themeColor: PRIMARY
+        iconDataValue:
+          inputValue:
+            codePoint: 58136
+            family: MaterialIcons
+            matchTextDirection: false
+            name: home
+      show: true
+      differentActiveIcon: false
+      label:
+        translationIdentifier:
+          key: dyrmxiaw
+        textValue:
+          inputValue: Home
+      alwaysShowNavBar: true
+    hideKeyboardOnTap: true
+    backgroundColorValue:
+      inputValue:
+        themeColor: PRIMARY_BACKGROUND
+name: Basehomepg

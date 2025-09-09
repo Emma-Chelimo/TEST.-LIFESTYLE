@@ -1,0 +1,23 @@
+database:
+  updateDocument:
+    write:
+      updates:
+        following:
+          fieldIdentifier:
+            name: following
+          fieldValue:
+            fieldValue: FIRESTORE_ARRAY_UNION
+            value:
+              fieldIdentifier:
+                name: following
+              variable:
+                source: FIREBASE_AUTH_USER
+                baseVariable:
+                  auth:
+                    property: USER_REFERENCE
+    reference:
+      source: FIREBASE_AUTH_USER
+      baseVariable:
+        auth:
+          property: USER_REFERENCE
+key: eerh2ue5

@@ -1,0 +1,12 @@
+webSettings:
+  PROD:
+    seoTitle: Beats music
+    seoDescription: enjoyable music
+    usePerPageTitles: true
+    ogImagePath: projects/project-one-fgeund/assets/xz36y0hzo8e5/3a60cafbf1f4fd31ec96cc9962028194.jpg
+    allowToShare: true
+    allowSearchEngineIndexing: true
+    allowPwa: true
+    statusBarColor:
+      themeColor: ERROR
+    orientation: PORTRAIT_PRIMARY

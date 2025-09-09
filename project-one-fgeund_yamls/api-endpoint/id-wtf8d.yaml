@@ -1,0 +1,15 @@
+identifier:
+  name: searchspotify
+  key: wtf8d
+url: https://api.spotify.com/v1/search
+callType: GET
+headers:
+  - "Authorization: Bearer "
+endpointSettings:
+  escapeVariablesInRequestBody: true
+parameters:
+  - identifier:
+      name: query
+      key: ae2utk55
+    specifiedValue: type=track
+    type: String

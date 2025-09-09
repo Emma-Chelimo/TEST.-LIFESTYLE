@@ -1,0 +1,18 @@
+key: Icon_0m9k2smb
+type: Icon
+props:
+  icon:
+    sizeValue:
+      inputValue: 24
+    colorValue:
+      inputValue:
+        themeColor: SECONDARY_BACKGROUND
+    iconDataValue:
+      inputValue:
+        codePoint: 62804
+        family: MaterialIcons
+        matchTextDirection: false
+        name: album_rounded
+  padding:
+    leftValue:
+      inputValue: 10

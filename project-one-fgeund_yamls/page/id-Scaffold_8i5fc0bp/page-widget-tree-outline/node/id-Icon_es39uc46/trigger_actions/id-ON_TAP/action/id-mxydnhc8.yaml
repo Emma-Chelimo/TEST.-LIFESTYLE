@@ -1,0 +1,19 @@
+database:
+  updateDocument:
+    write:
+      updates:
+        posts:
+          fieldIdentifier:
+            name: posts
+          fieldValue:
+            fieldValue: FIRESTORE_ARRAY_UNION
+            value:
+              fieldIdentifier:
+                name: posts
+              uploadVariableNodeKey: Icon_57kpm6pt
+    reference:
+      source: FIREBASE_AUTH_USER
+      baseVariable:
+        auth:
+          property: USER_REFERENCE
+key: mxydnhc8

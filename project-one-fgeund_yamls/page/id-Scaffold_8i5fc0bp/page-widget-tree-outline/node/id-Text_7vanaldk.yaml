@@ -1,0 +1,28 @@
+key: Text_7vanaldk
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: 9m59nwlj
+    selectable: false
+    textValue:
+      variable:
+        source: FIREBASE_AUTH_USER
+        defaultValue:
+          serializedValue: "000"
+        baseVariable:
+          auth:
+            property: USERS_DATA_FIELD
+            usersDataField:
+              name: followers
+        operations:
+          - listNumItems: {}
+          - numberFormat:
+              formatType: COMPACT
+        uiBuilderValue:
+          serializedValue: "000"
+      mostRecentInputValue: "000"
+    colorValue:
+      inputValue:
+        themeColor: SECONDARY_BACKGROUND

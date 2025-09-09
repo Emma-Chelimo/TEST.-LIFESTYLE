@@ -1,0 +1,35 @@
+rootAction:
+  key: ye3ejysw
+  action:
+    key: y2f66j7t
+  followUpAction:
+    key: nnlx7ndn
+    conditionActions:
+      falseAction:
+        key: mwd3p9z5
+        action:
+          key: vgk3qp3x
+      trueActions:
+        - condition:
+            variable:
+              source: ACTION_OUTPUTS
+              baseVariable:
+                actionOutput:
+                  outputVariableIdentifier:
+                    name: apiResultdn2
+                  actionKeyRef:
+                    key: y2f66j7t
+              operations:
+                - apiResponseField:
+                    responseField: SUCCEEDED
+                - negate: {}
+              nodeKeyRef:
+                key: Row_tqlpn0na
+          trueAction:
+            key: 0q9hryu8
+            action:
+              key: on7w8k63
+      hasMultiConditions: true
+      key: n7esbpu4
+trigger:
+  triggerType: ON_TAP

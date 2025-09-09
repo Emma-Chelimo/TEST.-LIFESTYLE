@@ -1,0 +1,36 @@
+key: Icon_v7b2ei8b
+type: Icon
+props:
+  icon:
+    sizeValue:
+      inputValue: 24
+    colorValue:
+      inputValue:
+        themeColor: ERROR
+    iconDataValue:
+      inputValue:
+        codePoint: 58843
+        family: MaterialIcons
+        matchTextDirection: false
+        name: speaker
+  padding:
+    leftValue:
+      inputValue: 70
+animations:
+  - trigger: ON_PAGE_LOAD
+    effects:
+      - curve: EASE_IN_OUT
+        rotate:
+          begin:
+            inputValue:
+              serializedValue: "0"
+          end:
+            inputValue:
+              serializedValue: "1"
+        delay:
+          inputValue:
+            serializedValue: "0"
+        duration:
+          inputValue:
+            serializedValue: "600.0"
+    applyInitialState: true

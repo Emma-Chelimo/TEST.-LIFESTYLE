@@ -1,0 +1,29 @@
+key: Text_3e5b2d0j
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: ew3rq1b7
+    selectable: false
+    textValue:
+      inputValue: Search
+    colorValue:
+      inputValue:
+        themeColor: INFO
+  padding:
+    leftValue:
+      inputValue: 40
+    topValue:
+      inputValue: 10
+  alignment:
+    xValue:
+      inputValue: -1
+    yValue:
+      inputValue: -1
+  responsiveVisibility: {}
+  opacity:
+    opacityValue:
+      inputValue: 1
+    animatedOpacity: {}
+valueKey: {}

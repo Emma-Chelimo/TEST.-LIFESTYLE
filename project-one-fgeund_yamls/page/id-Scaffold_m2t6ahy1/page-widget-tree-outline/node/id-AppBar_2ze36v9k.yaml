@@ -1,0 +1,16 @@
+key: AppBar_2ze36v9k
+type: AppBar
+props:
+  appBar:
+    templateType: LARGE_HEADER
+    isSliver: false
+    titleInFlexibleSpaceBar: false
+    defaultBackButtonValue:
+      inputValue: false
+    backgroundColorValue:
+      inputValue:
+        paletteColorName: Rich Black FOGRA 39
+    elevationValue:
+      inputValue: 0
+    centerTitleValue:
+      inputValue: false

@@ -1,0 +1,15 @@
+key: Icon_ife4b6lm
+type: Icon
+props:
+  icon:
+    sizeValue:
+      inputValue: 24
+    colorValue:
+      inputValue:
+        themeColor: PRIMARY_TEXT
+    iconDataValue:
+      inputValue:
+        codePoint: 983442
+        family: MaterialIcons
+        matchTextDirection: false
+        name: skip_next_rounded

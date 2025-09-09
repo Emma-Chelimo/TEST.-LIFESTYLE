@@ -1,0 +1,70 @@
+node:
+  key: Scaffold_m2t6ahy1
+  appBar:
+    key: AppBar_2ze36v9k
+    title:
+      key: Text_v3hpvugi
+  body:
+    key: Container_uexenp1a
+    children:
+      - key: Column_wrh3rlk2
+        children:
+          - key: Row_3k5peg8v
+            children:
+              - key: Icon_8d7uhgp7
+          - key: Row_u36lqo9z
+            children:
+              - key: Text_2toyb94w
+          - key: Container_lflblaoy
+            children:
+              - key: Column_5ud42t5r
+                children:
+                  - key: Row_9l96r3sc
+                    children:
+                      - key: Image_nlf4ifco
+                      - key: Text_qd7wcab3
+                      - key: Icon_1z84yfvt
+                      - key: Icon_ife4b6lm
+          - key: Container_jgolli2y
+            children:
+              - key: Column_9k9q6ukl
+                children:
+                  - key: Row_p33o3y4z
+                    children:
+                      - key: Text_ovhkp4g9
+                  - key: Row_6afi1rlv
+                    children:
+                      - key: Container_paiz8h4z
+                      - key: Container_skq7yr6g
+                      - key: Container_g6vbcr2n
+                  - key: Row_67svjz9y
+                    children:
+                      - key: Text_bxjbm6nz
+                      - key: Text_uoqhree6
+                      - key: Text_nr1gve9b
+                  - key: Row_236dhe9j
+                    children:
+                      - key: Text_739gvt7n
+                  - key: Row_o6u0x0ut
+                    children:
+                      - key: Container_ah83ak0g
+                      - key: Container_nyj7cpts
+                      - key: Container_1qu3v52v
+                  - key: Row_d8p5diph
+                    children:
+                      - key: Text_jyjnyvox
+                      - key: Text_9itpd6cn
+                      - key: Text_beybxhhy
+                  - key: Row_yopr70mq
+                    children:
+                      - key: Text_bmvhteox
+                  - key: Row_aptgygo4
+                    children:
+                      - key: Container_ektsr2t9
+                      - key: Container_9t6cuju8
+                      - key: Container_adgp5cpb
+                  - key: Row_89yhyg2o
+                    children:
+                      - key: Text_m4p36pqu
+                      - key: Text_f0oiy5xg
+                      - key: Text_18vv0vq3

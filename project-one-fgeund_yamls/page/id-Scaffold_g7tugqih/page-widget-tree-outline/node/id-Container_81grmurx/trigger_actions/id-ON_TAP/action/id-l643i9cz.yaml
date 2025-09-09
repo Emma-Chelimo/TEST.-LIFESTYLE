@@ -1,0 +1,24 @@
+auth:
+  type: LOGIN
+  provider: EMAIL
+  emailVariable:
+    source: LOCAL_STATE
+    baseVariable:
+      localState:
+        fieldIdentifier:
+          name: email
+          key: mfwbm
+        stateVariableType: WIDGET_CLASS_STATE
+    nodeKeyRef:
+      key: Scaffold_g7tugqih
+  passwordVariable:
+    source: LOCAL_STATE
+    baseVariable:
+      localState:
+        fieldIdentifier:
+          name: password
+          key: wne8r
+        stateVariableType: WIDGET_CLASS_STATE
+    nodeKeyRef:
+      key: Scaffold_g7tugqih
+key: l643i9cz

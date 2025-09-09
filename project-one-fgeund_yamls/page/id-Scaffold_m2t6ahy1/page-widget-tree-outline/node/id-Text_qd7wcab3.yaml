@@ -1,0 +1,12 @@
+key: Text_qd7wcab3
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: ns6540t9
+    selectable: false
+    textValue:
+      inputValue: Song
+    fontWeightValue:
+      inputValue: w600

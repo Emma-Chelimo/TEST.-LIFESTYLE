@@ -1,0 +1,15 @@
+key: Text_bg61fmms
+type: Text
+props:
+  text:
+    themeStyle: BODY_MEDIUM
+    translationIdentifier:
+      key: cklktga1
+    selectable: false
+    textValue:
+      inputValue: Likes
+    colorValue:
+      inputValue:
+        themeColor: SECONDARY_BACKGROUND
+    fontWeightValue:
+      inputValue: w600

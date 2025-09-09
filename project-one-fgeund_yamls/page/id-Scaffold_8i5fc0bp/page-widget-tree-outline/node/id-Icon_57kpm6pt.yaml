@@ -1,0 +1,15 @@
+key: Icon_57kpm6pt
+type: Icon
+props:
+  icon:
+    sizeValue:
+      inputValue: 24
+    colorValue:
+      inputValue:
+        paletteColorName: Cerise
+    iconDataValue:
+      inputValue:
+        codePoint: 59676
+        family: MaterialIcons
+        matchTextDirection: false
+        name: edit_sharp

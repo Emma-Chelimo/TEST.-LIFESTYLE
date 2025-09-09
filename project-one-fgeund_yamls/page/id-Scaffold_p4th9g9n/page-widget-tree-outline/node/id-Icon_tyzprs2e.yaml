@@ -1,0 +1,24 @@
+key: Icon_tyzprs2e
+type: Icon
+props:
+  icon:
+    sizeValue:
+      inputValue: 20
+    colorValue:
+      inputValue:
+        themeColor: PRIMARY_BACKGROUND
+    iconDataValue:
+      inputValue:
+        codePoint: 57490
+        family: MaterialIcons
+        matchTextDirection: true
+        name: arrow_back
+  padding:
+    leftValue:
+      inputValue: 10
+  responsiveVisibility: {}
+  opacity:
+    opacityValue:
+      inputValue: 1
+    animatedOpacity: {}
+valueKey: {}

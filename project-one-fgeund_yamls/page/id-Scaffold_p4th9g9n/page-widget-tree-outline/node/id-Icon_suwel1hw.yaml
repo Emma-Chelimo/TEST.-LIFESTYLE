@@ -1,0 +1,18 @@
+key: Icon_suwel1hw
+type: Icon
+props:
+  icon:
+    sizeValue:
+      inputValue: 24
+    colorValue:
+      inputValue:
+        themeColor: PRIMARY_BACKGROUND
+    iconDataValue:
+      inputValue:
+        codePoint: 59772
+        family: MaterialIcons
+        matchTextDirection: false
+        name: filter_list_sharp
+  padding:
+    leftValue:
+      inputValue: 20

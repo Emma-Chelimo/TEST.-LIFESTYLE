@@ -1,0 +1,18 @@
+key: Icon_rwm9dogd
+type: Icon
+props:
+  icon:
+    sizeValue:
+      inputValue: 24
+    colorValue:
+      inputValue:
+        themeColor: PRIMARY_TEXT
+    iconDataValue:
+      inputValue:
+        codePoint: 62051
+        family: MaterialIcons
+        matchTextDirection: false
+        name: pause_outlined
+  padding:
+    leftValue:
+      inputValue: 70

@@ -1,0 +1,66 @@
+identifier:
+  name: users
+  key: x1lx14ot
+fields:
+  email:
+    identifier:
+      name: email
+    dataType:
+      scalarType: String
+  display_name:
+    identifier:
+      name: display_name
+    dataType:
+      scalarType: String
+  photo_url:
+    identifier:
+      name: photo_url
+    dataType:
+      scalarType: ImagePath
+  uid:
+    identifier:
+      name: uid
+    dataType:
+      scalarType: String
+  created_time:
+    identifier:
+      name: created_time
+    dataType:
+      scalarType: DateTime
+  phone_number:
+    identifier:
+      name: phone_number
+    dataType:
+      scalarType: String
+  likes:
+    identifier:
+      name: likes
+    dataType:
+      listType:
+        scalarType: Integer
+  followers:
+    identifier:
+      name: followers
+    dataType:
+      listType:
+        scalarType: DocumentReference
+      subType:
+        collectionIdentifier:
+          name: users
+          key: x1lx14ot
+  following:
+    identifier:
+      name: following
+    dataType:
+      listType:
+        scalarType: DocumentReference
+      subType:
+        collectionIdentifier:
+          name: users
+          key: x1lx14ot
+  posts:
+    identifier:
+      name: posts
+    dataType:
+      listType:
+        scalarType: ImagePath
