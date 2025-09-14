@@ -1,4 +1,4 @@
-import 'package:project_one/basehomepg.dart';
+//import 'package:project_one/basehomepg.dart';
 
 //import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -41,7 +41,7 @@ class _PlayerpgWidgetState extends State<PlayerpgWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => PlayerpgModel());
+    _model = PlayerpgModel();
 
     animationsMap.addAll({
       'iconOnPageLoadAnimation1': AnimationInfo(

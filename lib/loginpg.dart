@@ -40,7 +40,7 @@ class _LoginWidgetState extends State<LoginWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => LoginModel());
+    _model = LoginModel();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }

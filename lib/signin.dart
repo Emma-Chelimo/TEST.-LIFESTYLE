@@ -4,17 +4,17 @@ import 'package:project_one/Playerpg.dart';
 import 'package:project_one/basehomepg.dart';
 import 'package:project_one/loginpg.dart';
 
-import '/auth/firebase_auth/auth_util.dart';
+//import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
-import '/index.dart';
+//import '/flutter_flow/flutter_flow_util.dart';
+//import '/flutter_flow/flutter_flow_widgets.dart';
+//import 'dart:ui';
+//import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
+//import 'package:provider/provider.dart';
 
-import 'sign_in_model.dart';
+//import 'sign_in_model.dart';
 export 'sign_in_model.dart';
 
 class SignInWidget extends StatefulWidget {
@@ -39,7 +39,7 @@ class _SignInWidgetState extends State<SignInWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => SignInModel());
+    _model = SignInModel();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }

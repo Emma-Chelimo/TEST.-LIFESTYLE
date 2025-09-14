@@ -1,16 +1,10 @@
-import 'package:project_one/Playerpg.dart';
-
-//import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
-//import '/flutter_flow/flutter_flow_util.dart';
-//import '/flutter_flow/flutter_flow_widgets.dart';
-//import 'dart:math';
-//import 'dart:ui';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/internationalization.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
 import 'package:flutter/material.dart';
-//import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
-//import 'package:provider/provider.dart';
 
 export 'basehomepg_model.dart';
 
@@ -25,18 +19,17 @@ class BasehomepgWidget extends StatefulWidget {
 }
 
 class _BasehomepgWidgetState extends State<BasehomepgWidget>
-    with TickerProviderStateMixin {
+    with TickerProviderStateMixin, AnimationMixin {
   late BasehomepgModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
-  final animationsMap = <String, AnimationInfo>{};
-
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => BasehomepgModel()) as BasehomepgModel;
+    _model = BasehomepgModel();
 
+    // Add animations
     animationsMap.addAll({
       'textOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
@@ -235,7 +228,8 @@ class _BasehomepgWidgetState extends State<BasehomepgWidget>
                                                   .fontStyle,
                                         ),
                                   ),
-                                  if (_model.isplaying != null && _model.isplaying!)
+                                  if (_model.isplaying != null &&
+                                      _model.isplaying!)
                                     InkWell(
                                       splashColor: Colors.transparent,
                                       focusColor: Colors.transparent,
@@ -473,8 +467,9 @@ class _BasehomepgWidgetState extends State<BasehomepgWidget>
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        20, 0, 0, 0),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            20, 0, 0, 0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
                                         '7abzp49t' /* Albums */,
@@ -829,45 +824,32 @@ class _BasehomepgWidgetState extends State<BasehomepgWidget>
           ),
         ));
   }
-  
+
   void safeSetState(Null Function() param0) {}
-  
+
   valueOrDefault(String string, String s) {}
-  
-  Future<BasehomepgModel> createModel(BuildContext context, BasehomepgModel Function() param1) async {
+
+  BasehomepgModel createModel(
+      BuildContext context, BasehomepgModel Function() param1) {
     return param1();
   }
 }
 
-class MyClass {
-}
+class MyClass {}
 
 // Removed invalid mixin declaration
 
-extension on Text {
-}
+extension on Text {}
 
 //class FlutterFlowTheme {
-  //static of(BuildContext context) async {}
-  
+//static of(BuildContext context) async {}
+
 //}
 
 class BasehomepgModel {
   bool? get isplaying => null;
 
   void dispose() {}
-  
 }
 
-class AnimationInfo {
-  
-    final String trigger;
-    final List<Effect> Function()? effectsBuilder;
-  
-    AnimationInfo({
-      required this.trigger,
-      this.effectsBuilder,
-    });
-
-  
-}
+// AnimationInfo class moved to flutter_flow_animations.dart

@@ -2,21 +2,21 @@ import 'package:go_router/go_router.dart';
 import 'package:project_one/Playerpg.dart';
 import 'package:project_one/basehomepg.dart';
 
-import '/auth/firebase_auth/auth_util.dart';
-import '/backend/backend.dart';
-import '/backend/firebase_storage/storage.dart';
+//import '/auth/firebase_auth/auth_util.dart';
+//import '/backend/backend.dart';
+//import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/upload_data.dart';
+//import '/flutter_flow/flutter_flow_util.dart';
+//import '/flutter_flow/flutter_flow_widgets.dart';
+//import '/flutter_flow/upload_data.dart';
 import 'dart:ui';
-import '/index.dart';
+//import '/index.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
+//import 'package:provider/provider.dart';
 
-import 'profilepg_model.dart';
+//import 'profilepg_model.dart';
 export 'profilepg_model.dart';
 
 class ProfilepgWidget extends StatefulWidget {
@@ -41,7 +41,7 @@ class _ProfilepgWidgetState extends State<ProfilepgWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ProfilepgModel());
+    _model = ProfilepgModel();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -809,9 +809,9 @@ class _ProfilepgWidgetState extends State<ProfilepgWidget> {
                                               gridViewUsersRecordList.length,
                                           itemBuilder:
                                               (context, gridViewIndex) {
-                                            final gridViewUsersRecord =
-                                                gridViewUsersRecordList[
-                                                    gridViewIndex];
+                                            //final gridViewUsersRecord =
+                                            gridViewUsersRecordList[
+                                                gridViewIndex];
                                             return Padding(
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(20, 20, 0, 0),

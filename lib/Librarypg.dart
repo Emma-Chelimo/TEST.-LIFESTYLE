@@ -33,7 +33,7 @@ class _LibrarypgWidgetState extends State<LibrarypgWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => LibrarypgModel());
+    _model = LibrarypgModel();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }

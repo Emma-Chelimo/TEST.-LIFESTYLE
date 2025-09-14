@@ -1,27 +1,20 @@
 import 'package:firebase_app_check/firebase_app_check.dart';
-//import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
-//import 'package:flutter_localizations/flutter_localizations.dart';
-//import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:go_router/go_router.dart';
-//import 'package:project_one/basehomepg.dart';
-//import 'auth/firebase_auth/firebase_user_provider.dart';
-//import 'auth/firebase_auth/auth_util.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-//import 'lib/backend/supabase/supabase.dart';
-//import 'backend/firebase/firebase_config.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
-//import 'flutter_flow/flutter_flow_util.dart';
-//import 'flutter_flow/internationalization.dart';
+import '/flutter_flow/internationalization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
-//import 'flutter_flow/firebase_app_check_util.dart';
-//import 'package:google_fonts/google_fonts.dart';
-//import 'flutter_flow/nav/nav.dart';
-//import 'index.dart';
+import 'package:project_one/basehomepg.dart';
+import 'package:project_one/signin.dart';
+import 'package:project_one/loginpg.dart';
+import 'package:project_one/Playerpg.dart';
+import 'package:project_one/Librarypg.dart';
+import 'package:project_one/Searchpg.dart';
+import 'package:project_one/profilepg.dart';
 
 Future<void> initFirebase() async {
   await Firebase.initializeApp(
@@ -33,19 +26,27 @@ class SupaFlow {
   static Future<void> initialize() async {
     await Supabase.initialize(
       url: 'https://brqyhryqrejbqjuwnbpn.supabase.co',
-      anonKey: '<YOUR_SUPABASE_ANON_PUBLIC_KEY>',
+      anonKey:
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJycXlocnlxcmVqYnFqdXduYnBuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU3Nzg3NDIsImV4cCI6MjA3MTM1NDc0Mn0.mZ0wEqS9FUK2GPQq_bh_Q_1mkshpGV9yVoZL2BIFGFQ',
     );
   }
 }
+
 // Removed duplicate FlutterFlowTheme class to avoid conflicts with
 // the app-wide theme in flutter_flow/flutter_flow_theme.dart
 
 Future<void> initializeFirebaseAppCheck() async {
-  await FirebaseAppCheck.instance.activate(
-    //webRecaptchaSiteKey: kIsWeb? '6LcFua0rAAAAAFGKxQRV-JxhyYFXoQg468T6W2Yf',
-    androidProvider: AndroidProvider.debug,
-    appleProvider: AppleProvider.debug,
-  );
+  if (kIsWeb) {
+    // For older firebase_app_check versions, web reCAPTCHA is not supported
+    // Skip App Check activation for web in this version
+    print(
+        'App Check not activated for web - version 0.3.2+7 does not support web reCAPTCHA');
+  } else {
+    await FirebaseAppCheck.instance.activate(
+      androidProvider: AndroidProvider.debug,
+      appleProvider: AppleProvider.debug,
+    );
+  }
 }
 
 void main() async {
@@ -72,15 +73,53 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Beatsmusic',
       theme: FlutterFlowTheme.themeData,
-      home: Scaffold(
-        body: Center(child: Text('Hello World')),
-      ),
-      // Add other properties as needed
+      routerConfig: _router,
     );
   }
 }
+
+final GoRouter _router = GoRouter(
+  initialLocation: '/basehomepg',
+  routes: [
+    GoRoute(
+      path: '/basehomepg',
+      name: 'Basehomepg',
+      builder: (context, state) => const BasehomepgWidget(),
+    ),
+    GoRoute(
+      path: '/signin',
+      name: 'SignIn',
+      builder: (context, state) => const SignInWidget(),
+    ),
+    GoRoute(
+      path: '/login',
+      name: 'login',
+      builder: (context, state) => const LoginWidget(),
+    ),
+    GoRoute(
+      path: '/playerpg',
+      name: 'playerpg',
+      builder: (context, state) => const PlayerpgWidget(),
+    ),
+    GoRoute(
+      path: '/library',
+      name: 'Library',
+      builder: (context, state) => const LibrarypgWidget(),
+    ),
+    GoRoute(
+      path: '/search',
+      name: 'Search',
+      builder: (context, state) => const SearchpgWidget(),
+    ),
+    GoRoute(
+      path: '/profile',
+      name: 'Profile',
+      builder: (context, state) => const ProfilepgWidget(),
+    ),
+  ],
+);
 
 void usePathUrlStrategy() {}
