@@ -1,7 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/internationalization.dart';
-import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_animations.dart' as ffAnim;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -19,7 +18,7 @@ class BasehomepgWidget extends StatefulWidget {
 }
 
 class _BasehomepgWidgetState extends State<BasehomepgWidget>
-    with TickerProviderStateMixin, AnimationMixin {
+    with TickerProviderStateMixin, ffAnim.AnimationMixin {
   late BasehomepgModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -31,10 +30,10 @@ class _BasehomepgWidgetState extends State<BasehomepgWidget>
 
     // Add animations
     animationsMap.addAll({
-      'textOnPageLoadAnimation': AnimationInfo(
-        trigger: AnimationTrigger.onPageLoad,
+      'textOnPageLoadAnimation': ffAnim.AnimationInfo(
+        trigger: ffAnim.AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
-          FadeEffect(
+          ffAnim.FadeEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 700.0.ms,

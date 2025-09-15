@@ -20,6 +20,16 @@ export 'playerpg_model.dart';
 //basehome.BaseHomeTheme
 //ffTheme.FlutterFlowTheme;
 
+class AnimationInfo {
+  final dynamic trigger;
+  final List<dynamic> Function() effectsBuilder;
+
+  AnimationInfo({
+    required this.trigger,
+    required this.effectsBuilder,
+  });
+}
+
 class PlayerpgWidget extends StatefulWidget {
   const PlayerpgWidget({super.key});
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
+// Removed flutter_animate import to avoid conflicts; using custom simple effects.
 
 // Animation trigger types
 class AnimationTrigger {
@@ -13,7 +13,7 @@ class AnimationTrigger {
 // Animation info class
 class AnimationInfo {
   final String trigger;
-  final List<Effect> Function()? effectsBuilder;
+  final List<SimpleEffect> Function()? effectsBuilder;
   final Duration? duration;
   final Duration? delay;
 
@@ -25,15 +25,24 @@ class AnimationInfo {
   });
 }
 
+// Simple effect interface (avoids depending on flutter_animate's EffectEntry)
+abstract class SimpleEffect {
+  Widget build(
+    BuildContext context,
+    Widget child,
+    AnimationController controller,
+  );
+}
+
 // Animation effects
-class FadeEffect extends Effect {
+class FadeEffect extends SimpleEffect {
   final double begin;
   final double end;
   final Duration duration;
   final Duration delay;
   final Curve curve;
 
-  const FadeEffect({
+  FadeEffect({
     required this.begin,
     required this.end,
     required this.duration,
@@ -46,7 +55,6 @@ class FadeEffect extends Effect {
     BuildContext context,
     Widget child,
     AnimationController controller,
-    EffectEntry entry,
   ) {
     return FadeTransition(
       opacity: Tween<double>(begin: begin, end: end).animate(
@@ -57,14 +65,14 @@ class FadeEffect extends Effect {
   }
 }
 
-class SlideEffect extends Effect {
+class SlideEffect extends SimpleEffect {
   final Offset begin;
   final Offset end;
   final Duration duration;
   final Duration delay;
   final Curve curve;
 
-  const SlideEffect({
+  SlideEffect({
     required this.begin,
     required this.end,
     required this.duration,
@@ -77,7 +85,6 @@ class SlideEffect extends Effect {
     BuildContext context,
     Widget child,
     AnimationController controller,
-    EffectEntry entry,
   ) {
     return SlideTransition(
       position: Tween<Offset>(begin: begin, end: end).animate(
@@ -88,14 +95,14 @@ class SlideEffect extends Effect {
   }
 }
 
-class ScaleEffect extends Effect {
+class ScaleEffect extends SimpleEffect {
   final double begin;
   final double end;
   final Duration duration;
   final Duration delay;
   final Curve curve;
 
-  const ScaleEffect({
+  ScaleEffect({
     required this.begin,
     required this.end,
     required this.duration,
@@ -108,7 +115,6 @@ class ScaleEffect extends Effect {
     BuildContext context,
     Widget child,
     AnimationController controller,
-    EffectEntry entry,
   ) {
     return ScaleTransition(
       scale: Tween<double>(begin: begin, end: end).animate(
@@ -171,7 +177,6 @@ mixin AnimationMixin<T extends StatefulWidget>
         context,
         animatedChild,
         controller,
-        const EffectEntry(),
       );
     }
 
