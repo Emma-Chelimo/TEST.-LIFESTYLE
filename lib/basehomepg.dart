@@ -109,40 +109,16 @@ class _BasehomepgWidgetState extends State<BasehomepgWidget>
                 height: double.infinity,
                 decoration: BoxDecoration(
                   color: Color(0xFF21005D),
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: Image.asset(
-                      'assets/images/6426b3c84bd07f5104371b0f1d7b3478.jpg',
-                    ).image,
-                  ),
                 ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    const Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(350, 0, 0, 0),
-                          child: Icon(
-                            Icons.settings_suggest,
-                            color: Color(0xFFFF11FF),
-                            size: 24,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
-                            child: Text(
+                child: CustomScrollView(
+                  slivers: [
+                    SliverToBoxAdapter(
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(20, 16, 20, 0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
                               FFLocalizations.of(context).getText(
                                 'tsmvfroo' /* Welcome home. */,
                               ),
@@ -167,653 +143,225 @@ class _BasehomepgWidgetState extends State<BasehomepgWidget>
                                         .fontStyle,
                                   ),
                             ),
-                          ),
-                        ],
+                            const Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                              child: Icon(
+                                Icons.settings_suggest,
+                                color: Color(0xFFFF11FF),
+                                size: 24,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                      child: Container(
-                        width: 200,
-                        height: 50,
-                        decoration: const BoxDecoration(
-                          color: Color(0xFFFF6482),
-                          borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(25),
-                            bottomRight: Radius.circular(25),
-                            topLeft: Radius.circular(25),
-                            topRight: Radius.circular(25),
-                          ),
-                        ),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(8),
-                                    child: Image.network(
-                                      'https://picsum.photos/seed/839/600',
-                                      width: 40,
-                                      height: 40,
-                                      fit: BoxFit.cover,
-                                    ),
+
+                    // Now playing pill
+                    SliverToBoxAdapter(
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 16),
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Container(
+                            width: 200,
+                            height: 50,
+                            decoration: const BoxDecoration(
+                              color: Color(0xFFFF6482),
+                              borderRadius: BorderRadius.only(
+                                bottomLeft: Radius.circular(25),
+                                bottomRight: Radius.circular(25),
+                                topLeft: Radius.circular(25),
+                                topRight: Radius.circular(25),
+                              ),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(8),
+                                  child: Image.network(
+                                    'https://picsum.photos/seed/839/600',
+                                    width: 40,
+                                    height: 40,
+                                    fit: BoxFit.cover,
                                   ),
-                                  Text(
-                                    FFLocalizations.of(context).getText(
-                                      'ns6540t9' /* Song */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          font: GoogleFonts.inter(
-                                            fontWeight: FontWeight.w600,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
-                                          letterSpacing: 0.0,
+                                ),
+                                Text(
+                                  FFLocalizations.of(context).getText(
+                                    'ns6540t9' /* Song */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        font: GoogleFonts.inter(
                                           fontWeight: FontWeight.w600,
                                           fontStyle:
                                               FlutterFlowTheme.of(context)
                                                   .bodyMedium
                                                   .fontStyle,
                                         ),
-                                  ),
-                                  if (_model.isplaying != null &&
-                                      _model.isplaying!)
-                                    InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        safeSetState(() {});
-                                      },
-                                      child: Icon(
-                                        key: ValueKey(valueOrDefault(
-                                          _model.isplaying.toString(),
-                                          'true',
-                                        )),
-                                        Icons.pause_outlined,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 24,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w600,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
                                       ),
-                                    ),
-                                  Icon(
-                                    Icons.skip_next_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    size: 24,
-                                  ),
-                                ],
-                              ),
+                                ),
+                                Icon(
+                                  Icons.skip_next_rounded,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  size: 24,
+                                ),
+                              ],
                             ),
-                          ],
+                          ),
                         ),
                       ),
                     ),
-                    Opacity(
-                      opacity: 0.6,
-                      child: Container(
-                        width: 500,
-                        height: 600,
-                        decoration: BoxDecoration(
-                          color: FlutterFlowTheme.of(context).primaryText,
-                          borderRadius: const BorderRadius.only(
-                            bottomLeft: Radius.circular(0),
-                            bottomRight: Radius.circular(0),
-                            topLeft: Radius.circular(25),
-                            topRight: Radius.circular(25),
+
+                    // Playlists header
+                    SliverToBoxAdapter(
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 8),
+                        child: Text(
+                          FFLocalizations.of(context).getText(
+                            'mwnreu28' /* Your Playlists */,
                           ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w600,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                    fontSize: 20,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w600,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
                         ),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        20, 0, 0, 0),
-                                    child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        'mwnreu28' /* Your Playlists */,
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
+                      ),
+                    ),
+
+                    // Dynamic playlists grid (replace itemCount with API length)
+                    SliverPadding(
+                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 16),
+                      sliver: SliverGrid.count(
+                        crossAxisCount: 3,
+                        mainAxisSpacing: 16,
+                        crossAxisSpacing: 16,
+                        children: List.generate(6, (i) {
+                          return ClipRRect(
+                            borderRadius: BorderRadius.circular(25),
+                            child: Container(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                            ),
+                          );
+                        }),
+                      ),
+                    ),
+
+                    // Albums header
+                    SliverToBoxAdapter(
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 8),
+                        child: Text(
+                          FFLocalizations.of(context).getText(
+                            '7abzp49t' /* Albums */,
+                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w600,
+                                      fontStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
-                                          .override(
-                                            font: GoogleFonts.inter(
-                                              fontWeight: FontWeight.w600,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                            fontSize: 20,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w600,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
+                                          .fontStyle,
                                     ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                children: [
-                                  Container(
-                                    width: 100,
-                                    height: 100,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      borderRadius: const BorderRadius.only(
-                                        bottomLeft: Radius.circular(25),
-                                        bottomRight: Radius.circular(25),
-                                        topLeft: Radius.circular(25),
-                                        topRight: Radius.circular(25),
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
-                                    width: 100,
-                                    height: 100,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      borderRadius: const BorderRadius.only(
-                                        bottomLeft: Radius.circular(25),
-                                        bottomRight: Radius.circular(25),
-                                        topLeft: Radius.circular(25),
-                                        topRight: Radius.circular(25),
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
-                                    width: 100,
-                                    height: 100,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      borderRadius: const BorderRadius.only(
-                                        bottomLeft: Radius.circular(25),
-                                        bottomRight: Radius.circular(25),
-                                        topLeft: Radius.circular(25),
-                                        topRight: Radius.circular(25),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    'kiiy7wgj' /* Playlist */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
-                                ),
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    '9o8tl52p' /* Playlist */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
-                                ),
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    'mel8hbwc' /* Playlist */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
-                                ),
-                              ],
-                            ),
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Padding(
-                                    padding:
-                                        const EdgeInsetsDirectional.fromSTEB(
-                                            20, 0, 0, 0),
-                                    child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        '7abzp49t' /* Albums */,
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            font: GoogleFonts.inter(
-                                              fontWeight: FontWeight.w600,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                            fontSize: 20,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w600,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Container(
-                                  width: 100,
-                                  height: 100,
-                                  decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    borderRadius: const BorderRadius.only(
-                                      bottomLeft: Radius.circular(25),
-                                      bottomRight: Radius.circular(25),
-                                      topLeft: Radius.circular(25),
-                                      topRight: Radius.circular(25),
-                                    ),
+                                        .primaryBackground,
+                                    fontSize: 20,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w600,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
                                   ),
-                                ),
-                                Container(
-                                  width: 100,
-                                  height: 100,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    borderRadius: const BorderRadius.only(
-                                      bottomLeft: Radius.circular(25),
-                                      bottomRight: Radius.circular(25),
-                                      topLeft: Radius.circular(25),
-                                      topRight: Radius.circular(25),
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  width: 100,
-                                  height: 100,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    borderRadius: const BorderRadius.only(
-                                      bottomLeft: Radius.circular(25),
-                                      bottomRight: Radius.circular(25),
-                                      topLeft: Radius.circular(25),
-                                      topRight: Radius.circular(25),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    't1zh0xk3' /* Album */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
-                                ),
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    'n0kdvcyy' /* Album */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
-                                ),
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    '9gpzar9w' /* Album */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
-                                ),
-                              ],
-                            ),
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        20, 0, 0, 0),
-                                    child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        'nepqz6t2' /* Recommended */,
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            font: GoogleFonts.inter(
-                                              fontWeight: FontWeight.w600,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                            fontSize: 20,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w600,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Container(
-                                  width: 100,
-                                  height: 100,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    borderRadius: const BorderRadius.only(
-                                      bottomLeft: Radius.circular(25),
-                                      bottomRight: Radius.circular(25),
-                                      topLeft: Radius.circular(25),
-                                      topRight: Radius.circular(25),
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  width: 100,
-                                  height: 100,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    borderRadius: const BorderRadius.only(
-                                      bottomLeft: Radius.circular(25),
-                                      bottomRight: Radius.circular(25),
-                                      topLeft: Radius.circular(25),
-                                      topRight: Radius.circular(25),
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  width: 100,
-                                  height: 100,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    borderRadius: const BorderRadius.only(
-                                      bottomLeft: Radius.circular(25),
-                                      bottomRight: Radius.circular(25),
-                                      topLeft: Radius.circular(25),
-                                      topRight: Radius.circular(25),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    '2qe70xel' /* Album */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
-                                ),
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    'vttusw49' /* Album */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
-                                ),
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    'f6zdhf4f' /* Album */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
-                                ),
-                              ],
-                            ),
-                          ],
                         ),
+                      ),
+                    ),
+
+                    // Dynamic albums grid
+                    SliverPadding(
+                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 16),
+                      sliver: SliverGrid.count(
+                        crossAxisCount: 3,
+                        mainAxisSpacing: 16,
+                        crossAxisSpacing: 16,
+                        children: List.generate(6, (i) {
+                          return ClipRRect(
+                            borderRadius: BorderRadius.circular(25),
+                            child: Container(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                            ),
+                          );
+                        }),
+                      ),
+                    ),
+
+                    // Recommended header
+                    SliverToBoxAdapter(
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 8),
+                        child: Text(
+                          FFLocalizations.of(context).getText(
+                            'nepqz6t2' /* Recommended */,
+                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w600,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                    fontSize: 20,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w600,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
+                        ),
+                      ),
+                    ),
+
+                    // Recommended grid
+                    SliverPadding(
+                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 24),
+                      sliver: SliverGrid.count(
+                        crossAxisCount: 3,
+                        mainAxisSpacing: 16,
+                        crossAxisSpacing: 16,
+                        children: List.generate(6, (i) {
+                          return ClipRRect(
+                            borderRadius: BorderRadius.circular(25),
+                            child: Container(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                            ),
+                          );
+                        }),
                       ),
                     ),
                   ],
