@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_animations.dart' as ffAnim;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
+// Bottom navigation is now provided by NavShell (ShellRoute) in main.dart
 
 export 'basehomepg_model.dart';
 
@@ -20,6 +21,7 @@ class BasehomepgWidget extends StatefulWidget {
 class _BasehomepgWidgetState extends State<BasehomepgWidget>
     with TickerProviderStateMixin, ffAnim.AnimationMixin {
   late BasehomepgModel _model;
+  // Index handled globally by NavShell
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -102,6 +104,7 @@ class _BasehomepgWidgetState extends State<BasehomepgWidget>
               centerTitle: false,
               elevation: 0,
             ),
+            // bottomNavigationBar is provided by NavShell
             body: SafeArea(
               top: true,
               child: Container(

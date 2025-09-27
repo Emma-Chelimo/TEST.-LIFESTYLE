@@ -5,7 +5,7 @@ import 'firebase_options.dart';
 import 'package:go_router/go_router.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/internationalization.dart';
+// Using a simple in-app FFLocalizations without Material delegates
 import 'package:flutter/foundation.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:project_one/basehomepg.dart';
@@ -77,6 +77,79 @@ class MyApp extends StatelessWidget {
       title: 'Beatsmusic',
       theme: FlutterFlowTheme.themeData,
       routerConfig: _router,
+      // FFLocalizations is a lightweight singleton; no delegates needed here
+    );
+  }
+}
+
+class NavShell extends StatefulWidget {
+  final Widget child;
+  const NavShell({super.key, required this.child});
+
+  @override
+  State<NavShell> createState() => _NavShellState();
+}
+
+class _NavShellState extends State<NavShell> {
+  int _indexFromLocation(String location) {
+    if (location.startsWith('/search')) return 1;
+    if (location.startsWith('/library')) return 2;
+    if (location.startsWith('/profile')) return 3;
+    return 0; // home
+  }
+
+  void _onTap(int index) {
+    switch (index) {
+      case 0:
+        context.goNamed('Basehomepg');
+        break;
+      case 1:
+        context.goNamed('Search');
+        break;
+      case 2:
+        context.goNamed('Library');
+        break;
+      case 3:
+        context.goNamed('Profile');
+        break;
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final location = GoRouterState.of(context).matchedLocation;
+    final currentIndex = _indexFromLocation(location);
+    return Scaffold(
+      body: widget.child,
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: currentIndex,
+        onTap: _onTap,
+        backgroundColor: const Color(0xFF070707),
+        selectedItemColor: const Color(0xFFFF5963),
+        unselectedItemColor: const Color(0xFF249689),
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home_outlined),
+            activeIcon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search_outlined),
+            activeIcon: Icon(Icons.search),
+            label: 'Search',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.library_music_outlined),
+            activeIcon: Icon(Icons.library_music),
+            label: 'Library',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_outline),
+            activeIcon: Icon(Icons.person),
+            label: 'Profile',
+          ),
+        ],
+      ),
     );
   }
 }
@@ -84,10 +157,30 @@ class MyApp extends StatelessWidget {
 final GoRouter _router = GoRouter(
   initialLocation: '/basehomepg',
   routes: [
-    GoRoute(
-      path: '/basehomepg',
-      name: 'Basehomepg',
-      builder: (context, state) => const BasehomepgWidget(),
+    ShellRoute(
+      builder: (context, state, child) => NavShell(child: child),
+      routes: [
+        GoRoute(
+          path: '/basehomepg',
+          name: 'Basehomepg',
+          builder: (context, state) => const BasehomepgWidget(),
+        ),
+        GoRoute(
+          path: '/search',
+          name: 'Search',
+          builder: (context, state) => const SearchpgWidget(),
+        ),
+        GoRoute(
+          path: '/library',
+          name: 'Library',
+          builder: (context, state) => const LibrarypgWidget(),
+        ),
+        GoRoute(
+          path: '/profile',
+          name: 'Profile',
+          builder: (context, state) => const ProfilepgWidget(),
+        ),
+      ],
     ),
     GoRoute(
       path: '/signin',
@@ -103,21 +196,6 @@ final GoRouter _router = GoRouter(
       path: '/playerpg',
       name: 'playerpg',
       builder: (context, state) => const PlayerpgWidget(),
-    ),
-    GoRoute(
-      path: '/library',
-      name: 'Library',
-      builder: (context, state) => const LibrarypgWidget(),
-    ),
-    GoRoute(
-      path: '/search',
-      name: 'Search',
-      builder: (context, state) => const SearchpgWidget(),
-    ),
-    GoRoute(
-      path: '/profile',
-      name: 'Profile',
-      builder: (context, state) => const ProfilepgWidget(),
     ),
   ],
 );

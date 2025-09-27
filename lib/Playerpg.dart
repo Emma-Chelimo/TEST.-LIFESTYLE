@@ -3,6 +3,7 @@
 //import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 //import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/internationalization.dart';
 //import '/flutter_flow/flutter_flow_widgets.dart';
 //import 'dart:math';
 //import 'dart:ui';
@@ -439,10 +440,6 @@ class _PlayerpgWidgetState extends State<PlayerpgWidget>
 
 extension on Icon {
   animateOnPageLoad(AnimationInfo animationInfo) async {}
-}
-
-class FFLocalizations {
-  static of(BuildContext context) {}
 }
 
 extension on BuildContext {

@@ -1,14 +1,15 @@
 import 'package:go_router/go_router.dart';
-import 'package:project_one/Playerpg.dart';
+// import 'package:project_one/Playerpg.dart';
 import 'package:project_one/basehomepg.dart';
 
 import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
-import 'dart:ui';
+import '/flutter_flow/internationalization.dart';
+//import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'searchpg_model.dart';
+//import 'searchpg_model.dart';
 export 'searchpg_model.dart';
 
 class SearchpgWidget extends StatefulWidget {
@@ -45,7 +46,7 @@ class _SearchpgWidgetState extends State<SearchpgWidget> {
   Widget build(BuildContext context) {
     return Title(
         title: 'Searchpg',
-        color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
+        color: FlutterFlowTheme.of(context).primary.withAlpha(0xFF),
         child: GestureDetector(
           onTap: () {
             FocusScope.of(context).unfocus();
@@ -68,9 +69,11 @@ class _SearchpgWidgetState extends State<SearchpgWidget> {
                     ).image,
                   ),
                 ),
-                child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 1, 0),
-                  child: Column(
+                child: SingleChildScrollView(
+                  physics: BouncingScrollPhysics(),
+                  child: Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 1, 24),
+                    child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Column(
@@ -392,7 +395,7 @@ class _SearchpgWidgetState extends State<SearchpgWidget> {
               ),
             ),
           ),
-        ));
+        )));
   }
 
   void safeSetState(void Function() fn) {

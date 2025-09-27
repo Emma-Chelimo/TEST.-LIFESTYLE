@@ -1,11 +1,12 @@
 import 'package:go_router/go_router.dart';
-import 'package:project_one/Playerpg.dart';
+// import 'package:project_one/Playerpg.dart';
 import 'package:project_one/basehomepg.dart';
 
 //import '/auth/firebase_auth/auth_util.dart';
 //import '/backend/backend.dart';
 //import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/internationalization.dart';
 //import '/flutter_flow/flutter_flow_util.dart';
 //import '/flutter_flow/flutter_flow_widgets.dart';
 //import '/flutter_flow/upload_data.dart';
@@ -57,7 +58,7 @@ class _ProfilepgWidgetState extends State<ProfilepgWidget> {
   Widget build(BuildContext context) {
     return Title(
         title: 'profilepg',
-        color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
+        color: FlutterFlowTheme.of(context).primary.withAlpha(0xFF),
         child: GestureDetector(
           onTap: () {
             FocusScope.of(context).unfocus();
@@ -115,11 +116,13 @@ class _ProfilepgWidgetState extends State<ProfilepgWidget> {
                     ).image,
                   ),
                 ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                child: SingleChildScrollView(
+                  physics: BouncingScrollPhysics(),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -853,7 +856,7 @@ class _ProfilepgWidgetState extends State<ProfilepgWidget> {
               ),
             ),
           ),
-        ));
+        )));
   }
 
   ProfilepgModel createModel(

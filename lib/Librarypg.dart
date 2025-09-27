@@ -1,7 +1,8 @@
 import 'package:go_router/go_router.dart';
-import 'package:project_one/Playerpg.dart';
+// import 'package:project_one/Playerpg.dart';
 //import 'package:project_one/basehomepg.dart';
 import 'package:project_one/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/internationalization.dart';
 
 import '/flutter_flow/flutter_flow_icon_button.dart';
 //import '/flutter_flow/flutter_flow_theme.dart';
@@ -49,7 +50,7 @@ class _LibrarypgWidgetState extends State<LibrarypgWidget> {
   Widget build(BuildContext context) {
     return Title(
         title: 'librarypg',
-        color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
+        color: FlutterFlowTheme.of(context).primary.withAlpha(0xFF),
         child: GestureDetector(
           onTap: () {
             FocusScope.of(context).unfocus();
@@ -116,9 +117,11 @@ class _LibrarypgWidgetState extends State<LibrarypgWidget> {
                     ).image,
                   ),
                 ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
+                child: SingleChildScrollView(
+                  physics: BouncingScrollPhysics(),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                       child: Row(
@@ -839,7 +842,7 @@ class _LibrarypgWidgetState extends State<LibrarypgWidget> {
               ),
             ),
           ),
-        ));
+        )));
   }
 
   void safeSetState(void Function() fn) {
