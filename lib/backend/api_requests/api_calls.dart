@@ -1,6 +1,26 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+Future<Map<String, dynamic>?> searchSong(String query) async {
+  if (query.isEmpty) return null;
+
+  final response = await http.get(
+    Uri.parse('https://itunes.apple.com/search?term=${Uri.encodeQueryComponent(query)}'),
+  );
+  if (response.statusCode == 200) {
+    final data = json.decode(response.body);
+    if (data['results'] != null && data['results'].isNotEmpty) {
+      final song = data['results'][0];
+      return {
+        'title': song['trackName'],
+        'artist': song['artistName'],
+        'albumArtUrl': song['artworkUrl100'],
+        'audioUrl': song['previewUrl'],
+      };
+    }
+  }
+  return null;
+}
 class ApiCallResponse {
   final bool succeeded;
   final dynamic jsonBody;
@@ -8,7 +28,7 @@ class ApiCallResponse {
   ApiCallResponse(
       {required this.succeeded, this.jsonBody, required this.statusCode});
 }
-
+/*
 class SearchspotifyCall {
   static Future<ApiCallResponse> call({String query = 'test'}) async {
     try {
@@ -26,3 +46,9 @@ class SearchspotifyCall {
     }
   }
 }
+
+
+
+
+//'https://itunes.apple.com/search?term=${Uri.encodeQueryComponent(query)}'
+*/

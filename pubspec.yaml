@@ -11,6 +11,7 @@ dependencies:
     sdk: flutter
   flutter_web_plugins: 
     sdk: flutter
+  audioplayers: ^6.5.1
   supabase_flutter: ^2.10.0
   auto_size_text: 3.0.0
   cached_network_image: 3.4.1
@@ -116,13 +117,13 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - lib/assets/images/
-    - lib/assets/videos/
-    - lib/assets/audios/
-    - lib/assets/rive_animations/
-    - lib/assets/pdfs/
-    - lib/assets/jsons/
-    - lib/assets/languages/
+    - assets/images/
+    - assets/videos/
+    - assets/audios/
+    - assets/rive_animations/
+    - assets/pdfs/
+    - assets/jsons/
+    - assets/languages/
   
 
   
