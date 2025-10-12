@@ -1,3 +1,6 @@
+extra["compileSdkVersion"] = 34
+extra["minSdkVersion"] = 23
+extra["targetSdkVersion"] = 34
 allprojects
     repositories {
         google()
@@ -20,3 +23,5 @@ subprojects {
 tasks.register<Delete>("clean") {
     delete(rootProject.layout.buildDirectory)
 }
+
+
