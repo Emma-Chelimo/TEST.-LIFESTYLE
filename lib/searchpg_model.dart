@@ -48,13 +48,12 @@ class SearchpgModel extends ChangeNotifier {
     notifyListeners();
 
     try {
-      // Integrate with existing API: searchSong returns single result, so simulate multiple or update API
-      // For now, call searchSong and add to results; in production, modify api_calls.dart for list search
-      final result = await searchSong(searchQuery);
-      if (result != null) {
-        searchResults.add(result);
-        hasMoreResults = true; // Assume more for demo; update based on API
-        totalPages = 1; // Placeholder
+      // Call searchSong which now returns a list of results
+      final results = await searchSong(searchQuery);
+      if (results.isNotEmpty) {
+        searchResults.addAll(results);
+        hasMoreResults = false; // iTunes search returns all at once, no pagination
+        totalPages = 1;
       } else {
         errorMessage = 'No results found for "$searchQuery"';
       }
@@ -69,27 +68,9 @@ class SearchpgModel extends ChangeNotifier {
   }
 
   Future<void> loadMore() async {
-    if (!hasMoreResults || isSearching) return;
-
-    currentPage++;
-    isSearching = true;
+    // iTunes API doesn't support pagination, so no more results
+    hasMoreResults = false;
     notifyListeners();
-
-    try {
-      // Similar to performSearch, but with pagination params if API supports
-      // For now, reuse searchSong as example
-      final result = await searchSong(searchQuery);
-      if (result != null) {
-        searchResults.add(result);
-      } else {
-        hasMoreResults = false;
-      }
-    } catch (e) {
-      errorMessage = 'Load more failed: ${e.toString()}';
-    } finally {
-      isSearching = false;
-      notifyListeners();
-    }
   }
 
   void applyFilters(Map<String, dynamic> newFilters) {

@@ -1,5 +1,5 @@
-extra["compileSdkVersion"] = 34
-extra["minSdkVersion"] = 23
+extra["compileSdkVersion"] = 36
+extra["minSdkVersion"] = 24
 extra["targetSdkVersion"] = 34
 allprojects
     repositories {

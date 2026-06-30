@@ -11,6 +11,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 //import 'searchpg_model.dart';
 export 'searchpg_model.dart';
+import 'searchpg_model.dart';
 
 // ...existing imports...
 import 'package:audioplayers/audioplayers.dart'; // Add this for audio playback
@@ -29,10 +30,7 @@ class _SearchpgWidgetState extends State<SearchpgWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final TextEditingController _searchController = TextEditingController();
 
-  String? songTitle;
-  String? artistName;
-  String? albumArtUrl;
-  String? previewUrl;
+  Map<String, dynamic>? selectedSong;
   bool isPlaying = false;
   AudioPlayer? _audioPlayer;
 
@@ -56,29 +54,10 @@ class _SearchpgWidgetState extends State<SearchpgWidget> {
     final query = _searchController.text.trim();
     if (query.isEmpty) return;
 
-    // Call your Spotify API here
-    final result = await searchSong(query);
-
-    if (result != null) {
-      // Parse response to get song details
-      final song = result;
-      setState(() {
-        songTitle = song['name'];
-        artistName = song['artists'][0]['name'];
-        albumArtUrl = song['album']['images'][0]['url'];
-        previewUrl = song['preview_url'];
-      });
-      if (previewUrl != null) {
-        await _audioPlayer?.play(UrlSource(previewUrl!));
-        setState(() {
-          isPlaying = true;
-        });
-      }
-    } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Song not found!'))
-      );
-    }
+    // Set the query in the model and perform search
+    _model.searchQuery = query;
+    await _model.performSearch();
+    // Results are now in _model.searchResults
   }
 
   void _togglePlayPause() async {
@@ -87,12 +66,21 @@ class _SearchpgWidgetState extends State<SearchpgWidget> {
       setState(() {
         isPlaying = false;
       });
-    } else if (previewUrl != null) {
-      await _audioPlayer?.play(UrlSource(previewUrl!));
+    } else if (selectedSong != null && selectedSong!['audioUrl'] != null) {
+      await _audioPlayer?.play(UrlSource(selectedSong!['audioUrl']));
       setState(() {
         isPlaying = true;
       });
     }
+  }
+
+  void _selectSong(Map<String, dynamic> song) {
+    setState(() {
+      selectedSong = song;
+      isPlaying = false; // Reset, will play on toggle
+    });
+    // Optionally auto-play
+    _togglePlayPause();
   }
 
   @override
@@ -122,164 +110,101 @@ class _SearchpgWidgetState extends State<SearchpgWidget> {
                   ).image,
                 ),
               ),
-              child: SingleChildScrollView(
-                physics: BouncingScrollPhysics(),
-                child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 1, 24),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      // ...existing header code...
-                      Opacity(
-                        opacity: 0.8,
-                        child: Align(
-                          alignment: AlignmentDirectional(-1, -1),
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(50, 20, 0, 0),
-                            child: Container(
-                              width: 300,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context).secondaryBackground,
-                                borderRadius: BorderRadius.circular(25),
-                                border: Border.all(color: Color(0xFF444267)),
-                              ),
-                              child: Row(
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
-                                    child: FaIcon(
-                                      FontAwesomeIcons.listUl,
-                                      color: FlutterFlowTheme.of(context).primaryText,
-                                      size: 20,
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                                      child: TextField(
-                                        controller: _searchController,
-                                        decoration: InputDecoration(
-                                          hintText: 'Search for a song...',
-                                          border: InputBorder.none,
-                                        ),
-                                        style: FlutterFlowTheme.of(context).bodyMedium,
-                                        onSubmitted: (_) => _searchSong(),
-                                      ),
-                                    ),
-                                  ),
-                                  IconButton(
-                                    icon: Icon(Icons.search, color: FlutterFlowTheme.of(context).primaryText),
-                                    onPressed: _searchSong,
-                                  ),
-                                ],
-                              ),
-                            ),
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  // ...existing header code...
+                  Opacity(
+                    opacity: 0.8,
+                    child: Align(
+                      alignment: AlignmentDirectional(-1, -1),
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(50, 20, 0, 0),
+                        child: Container(
+                          width: 350,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context).secondaryBackground,
+                            borderRadius: BorderRadius.circular(25),
+                            border: Border.all(color: Color(0xFF444267)),
                           ),
-                        ),
-                      ),
-                      // ...existing code...
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 250, 0, 0),
-                        child: Text(
-                          FFLocalizations.of(context).getText('B' /* B */),
-                          style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            font: GoogleFonts.islandMoments(
-                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                              fontStyle: FontStyle.italic,
-                            ),
-                            color: Color(0xFFE10E2C),
-                            fontSize: 50,
-                            letterSpacing: 0.0,
-                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                            fontStyle: FontStyle.italic,
-                          ),
-                        ),
-                      ),
-                      Opacity(
-                        opacity: 0.8,
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 240, 0, 0),
-                          child: Container(
-                            width: 350,
-                            height: 60,
-                            decoration: BoxDecoration(
-                              color: Color(0xFFB416BA),
-                              borderRadius: BorderRadius.circular(25),
-                              border: Border.all(color: Color(0xFF46184F)),
-                            ),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                                        child: ClipRRect(
-                                          borderRadius: BorderRadius.circular(8),
-                                          child: albumArtUrl != null
-                                              ? Image.network(albumArtUrl!, width: 40, height: 40, fit: BoxFit.cover)
-                                              : Image.asset('assets/images/asap.jpg', width: 40, height: 40, fit: BoxFit.cover),
-                                        ),
-                                      ),
-                                      Align(
-                                        alignment: AlignmentDirectional(0, 0),
-                                        child: Padding(
-                                          padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
-                                          child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                songTitle ?? 'Song',
-                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                  font: GoogleFonts.inter(
-                                                    fontWeight: FontWeight.bold,
-                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                  ),
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                ),
-                                              ),
-                                              Text(
-                                                artistName ?? 'Artist',
-                                                style: FlutterFlowTheme.of(context).bodyMedium,
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                      Spacer(),
-                                      IconButton(
-                                        icon: Icon(
-                                          isPlaying ? Icons.pause_outlined : Icons.play_arrow,
-                                          color: FlutterFlowTheme.of(context).primaryText,
-                                          size: 20,
-                                        ),
-                                        onPressed: _togglePlayPause,
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                                        child: Icon(
-                                          Icons.skip_next,
-                                          color: FlutterFlowTheme.of(context).primaryText,
-                                          size: 20,
-                                        ),
-                                      ),
-                                    ],
+                          child: Row(
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
+                                child: FaIcon(
+                                  FontAwesomeIcons.listUl,
+                                  color: FlutterFlowTheme.of(context).primaryText,
+                                  size: 20,
+                                ),
+                              ),
+                              Expanded(
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                  child: TextField(
+                                    controller: _searchController,
+                                    decoration: InputDecoration(
+                                      hintText: 'Search for a song...',
+                                      border: InputBorder.none,
+                                    ),
+                                    style: FlutterFlowTheme.of(context).bodyMedium,
+                                    onSubmitted: (_) => _searchSong(),
                                   ),
                                 ),
-                              ],
-                            ),
+                              ),
+                              IconButton(
+                                icon: Icon(Icons.search, color: FlutterFlowTheme.of(context).primaryText),
+                                onPressed: _searchSong,
+                              ),
+                            ],
                           ),
                         ),
                       ),
-                    ],
+                    ),
                   ),
-                ),
+                  // Search Results List
+                  Expanded(
+                    child: ListenableBuilder(
+                      listenable: _model,
+                      builder: (context, child) {
+                        if (_model.isSearching) {
+                          return Center(child: CircularProgressIndicator());
+                        }
+                        if (_model.errorMessage != null) {
+                          return Center(child: Text(_model.errorMessage!));
+                        }
+                        if (_model.searchResults.isEmpty) {
+                          return Center(child: Text('No results found.'));
+                        }
+                        return ListView.builder(
+                          itemCount: _model.searchResults.length,
+                          itemBuilder: (context, index) {
+                            final song = _model.searchResults[index];
+                            final isSelected = selectedSong == song;
+                            return ListTile(
+                              leading: ClipRRect(
+                                borderRadius: BorderRadius.circular(8),
+                                child: song['albumArtUrl'] != null && song['albumArtUrl'].isNotEmpty
+                                    ? Image.network(song['albumArtUrl'], width: 50, height: 50, fit: BoxFit.cover)
+                                    : Image.asset('assets/images/asap.jpg', width: 50, height: 50, fit: BoxFit.cover),
+                              ),
+                              title: Text(song['title'] ?? 'Unknown Title'),
+                              subtitle: Text(song['artist'] ?? 'Unknown Artist'),
+                              trailing: IconButton(
+                                icon: Icon(
+                                  isSelected && isPlaying ? Icons.pause : Icons.play_arrow,
+                                  color: FlutterFlowTheme.of(context).primaryText,
+                                ),
+                                onPressed: () => _selectSong(song),
+                              ),
+                              onTap: () => _selectSong(song),
+                            );
+                          },
+                        );
+                      },
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
@@ -294,8 +219,4 @@ class _SearchpgWidgetState extends State<SearchpgWidget> {
   }
 }
 
-class SearchpgModel {
-  ApiCallResponse? apiResultdn2;
-  ApiCallResponse? apiResultuj2;
-  void dispose() {}
-}
+

@@ -1,4 +1,4 @@
-import 'package:flutter_web_auth/flutter_web_auth.dart';
+import 'package:app_links/app_links.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
@@ -6,7 +6,7 @@ import 'dart:convert';
       String clientId, String clientSecret, String redirectUri) async {
     final authUrl =
         'https://accounts.spotify.com/authorize?client_id=$clientId&response_type=code&redirect_uri=$redirectUri&scope=user-modify-playback-state';
-    final result = await FlutterWebAuth.authenticate(
+    final result = await app_links.authenticate(
         url: authUrl, callbackUrlScheme: 'com.BEATSMUSIC.Beatsmusic');
 
     final code = Uri.parse(result).queryParameters['code'];

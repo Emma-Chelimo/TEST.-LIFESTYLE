@@ -8,6 +8,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 export 'basehomepg_model.dart';
 
+
 class BasehomepgWidget extends StatefulWidget {
   const BasehomepgWidget({super.key});
 
@@ -29,6 +30,8 @@ class _BasehomepgWidgetState extends State<BasehomepgWidget>
   void initState() {
     super.initState();
     _model = BasehomepgModel();
+    _model.addListener(_onModelChanged);
+    _model.initialize();
 
     // Add animations
     animationsMap.addAll({
@@ -49,8 +52,13 @@ class _BasehomepgWidgetState extends State<BasehomepgWidget>
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
+  void _onModelChanged() {
+    safeSetState(() {});
+  }
+
   @override
   void dispose() {
+    _model.removeListener(_onModelChanged);
     _model.dispose();
 
     super.dispose();
@@ -166,58 +174,86 @@ class _BasehomepgWidgetState extends State<BasehomepgWidget>
                         padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 16),
                         child: Align(
                           alignment: Alignment.center,
-                          child: Container(
-                            width: 200,
-                            height: 50,
-                            decoration: const BoxDecoration(
-                              color: Color(0xFFFF6482),
-                              borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(25),
-                                bottomRight: Radius.circular(25),
-                                topLeft: Radius.circular(25),
-                                topRight: Radius.circular(25),
+                          child: GestureDetector(
+                            onTap: () {
+                              if (_model.isPlaying) {
+                                _model.pauseSong();
+                              } else if (_model.nowPlaying != null) {
+                                _model.playSong(_model.nowPlaying!);
+                              }
+                            },
+                            child: Container(
+                              width: 220,
+                              height: 50,
+                              decoration: const BoxDecoration(
+                                color: Color(0xFFFF6482),
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(25),
+                                ),
                               ),
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(8),
-                                  child: Image.network(
-                                    'https://picsum.photos/seed/839/600',
-                                    width: 40,
-                                    height: 40,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    'ns6540t9' /* Song */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight: FontWeight.w600,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w600,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  6, 0, 12, 0),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(8),
+                                    child: Image.network(
+                                      _model.nowPlaying?['coverUrl'] ??
+                                          'https://picsum.photos/seed/839/600',
+                                      width: 38,
+                                      height: 38,
+                                      fit: BoxFit.cover,
+                                      errorBuilder: (c, e, s) => Container(
+                                        width: 38,
+                                        height: 38,
+                                        color: Colors.black26,
                                       ),
-                                ),
-                                Icon(
-                                  Icons.skip_next_rounded,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  size: 24,
-                                ),
-                              ],
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Padding(
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              8, 0, 4, 0),
+                                      child: Text(
+                                        _model.nowPlaying?['title'] ??
+                                            FFLocalizations.of(context).getText(
+                                              'ns6540t9' /* Song */,
+                                            ),
+                                        overflow: TextOverflow.ellipsis,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              font: GoogleFonts.inter(
+                                                fontWeight: FontWeight.w600,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w600,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  ),
+                                  Icon(
+                                    _model.isPlaying
+                                        ? Icons.pause_rounded
+                                        : Icons.play_arrow_rounded,
+                                    color:
+                                        FlutterFlowTheme.of(context).primaryText,
+                                    size: 24,
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -253,19 +289,54 @@ class _BasehomepgWidgetState extends State<BasehomepgWidget>
                       ),
                     ),
 
-                    // Dynamic playlists grid (replace itemCount with API length)
+                    // Dynamic playlists grid
                     SliverPadding(
                       padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 16),
                       sliver: SliverGrid.count(
                         crossAxisCount: 3,
                         mainAxisSpacing: 16,
                         crossAxisSpacing: 16,
-                        children: List.generate(6, (i) {
-                          return ClipRRect(
-                            borderRadius: BorderRadius.circular(25),
-                            child: Container(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
+                        children:
+                            List.generate(_model.playlists.length, (i) {
+                          final playlist = _model.playlists[i];
+                          return GestureDetector(
+                            onTap: () {
+                              if ((playlist['songs'] as List).isNotEmpty) {
+                                _model.playSong(
+                                    (playlist['songs'] as List).first);
+                              }
+                            },
+                            child: Column(
+                              children: [
+                                Expanded(
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(25),
+                                    child: Image.network(
+                                      playlist['coverUrl'] ?? '',
+                                      fit: BoxFit.cover,
+                                      width: double.infinity,
+                                      errorBuilder: (c, e, s) => Container(
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  playlist['name'] ?? '',
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        font: GoogleFonts.inter(),
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                        fontSize: 12,
+                                      ),
+                                ),
+                              ],
                             ),
                           );
                         }),
@@ -308,12 +379,41 @@ class _BasehomepgWidgetState extends State<BasehomepgWidget>
                         crossAxisCount: 3,
                         mainAxisSpacing: 16,
                         crossAxisSpacing: 16,
-                        children: List.generate(6, (i) {
-                          return ClipRRect(
-                            borderRadius: BorderRadius.circular(25),
-                            child: Container(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
+                        children: List.generate(_model.albums.length, (i) {
+                          final album = _model.albums[i];
+                          return GestureDetector(
+                            onTap: () => _model.playSong(album),
+                            child: Column(
+                              children: [
+                                Expanded(
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(25),
+                                    child: Image.network(
+                                      album['coverUrl'] ?? '',
+                                      fit: BoxFit.cover,
+                                      width: double.infinity,
+                                      errorBuilder: (c, e, s) => Container(
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  album['title'] ?? '',
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        font: GoogleFonts.inter(),
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                        fontSize: 12,
+                                      ),
+                                ),
+                              ],
                             ),
                           );
                         }),
@@ -356,12 +456,42 @@ class _BasehomepgWidgetState extends State<BasehomepgWidget>
                         crossAxisCount: 3,
                         mainAxisSpacing: 16,
                         crossAxisSpacing: 16,
-                        children: List.generate(6, (i) {
-                          return ClipRRect(
-                            borderRadius: BorderRadius.circular(25),
-                            child: Container(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
+                        children:
+                            List.generate(_model.recommended.length, (i) {
+                          final song = _model.recommended[i];
+                          return GestureDetector(
+                            onTap: () => _model.playSong(song),
+                            child: Column(
+                              children: [
+                                Expanded(
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(25),
+                                    child: Image.network(
+                                      song['coverUrl'] ?? '',
+                                      fit: BoxFit.cover,
+                                      width: double.infinity,
+                                      errorBuilder: (c, e, s) => Container(
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  song['title'] ?? '',
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        font: GoogleFonts.inter(),
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                        fontSize: 12,
+                                      ),
+                                ),
+                              ],
                             ),
                           );
                         }),
@@ -375,31 +505,9 @@ class _BasehomepgWidgetState extends State<BasehomepgWidget>
         ));
   }
 
-  void safeSetState(Null Function() param0) {}
-
-  valueOrDefault(String string, String s) {}
-
-  BasehomepgModel createModel(
-      BuildContext context, BasehomepgModel Function() param1) {
-    return param1();
+  void safeSetState(VoidCallback fn) {
+    if (mounted) {
+      setState(fn);
+    }
   }
 }
-
-class MyClass {}
-
-// Removed invalid mixin declaration
-
-extension on Text {}
-
-//class FlutterFlowTheme {
-//static of(BuildContext context) async {}
-
-//}
-
-class BasehomepgModel {
-  bool? get isplaying => null;
-
-  void dispose() {}
-}
-
-// AnimationInfo class moved to flutter_flow_animations.dart

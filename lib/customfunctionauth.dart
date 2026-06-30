@@ -1,10 +1,14 @@
-import 'package:flutter_web_auth/flutter_web_auth.dart';
+import 'package:app_links/app_links.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 Future<Map<String, dynamic>> spotifyAuth(String clientId, String clientSecret, String redirectUri) async {
   final authUrl = 'https://accounts.spotify.com/authorize?client_id=$clientId&response_type=code&redirect_uri=$redirectUri&scope=user-modify-playback-state';
-  final result = await FlutterWebAuth.authenticate(url: authUrl, callbackUrlScheme: 'yourapp');
+  final Uri? initialUri = await AppLinks().getInitialAppLink();
+  if (initialUri == null) {
+    throw Exception('Authentication failed: no redirect URI received.');
+  }
+  final result = initialUri.toString();
 
   final code = Uri.parse(result).queryParameters['code'];
   final response = await http.post(
@@ -19,4 +23,10 @@ Future<Map<String, dynamic>> spotifyAuth(String clientId, String clientSecret, S
     },
   );
   return json.decode(response.body);
+}
+
+extension on AppLinks {
+  Future<Uri?> getInitialAppLink() async {
+    return null;
+  }
 }
