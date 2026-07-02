@@ -195,7 +195,11 @@ final GoRouter _router = GoRouter(
     GoRoute(
       path: '/playerpg',
       name: 'playerpg',
-      builder: (context, state) => const PlayerpgWidget(),
+      builder: (context, state) => PlayerpgWidget(
+        song: state.extra is Map<String, dynamic>
+            ? state.extra as Map<String, dynamic>
+            : null,
+      ),
     ),
   ],
 );

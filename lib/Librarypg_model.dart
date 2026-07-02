@@ -1,4 +1,5 @@
-import '/backend/api_requests/api_calls.dart';
+import '/backend/firebase/music_service.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
@@ -13,9 +14,13 @@ class LibrarypgModel extends ChangeNotifier {
   List<Map<String, dynamic>> playlists = [];
   List<Map<String, dynamic>> favorites = [];
   List<Map<String, dynamic>> recentlyAdded = [];
+  List<Map<String, dynamic>> recentlyPlayed = [];
   Map<String, dynamic>? currentPlayingSong;
+  bool isPlaying = false;
   bool isLoading = false;
   String? errorMessage;
+
+  final MusicService _musicService = MusicService.instance;
 
   // Initialization
   void initialize() {
@@ -28,29 +33,44 @@ class LibrarypgModel extends ChangeNotifier {
     notifyListeners();
   }
 
+  List<Map<String, dynamic>> get currentCategoryItems {
+    switch (selectedCategory) {
+      case LibraryCategory.songs:
+        return songs;
+      case LibraryCategory.albums:
+        return albums;
+      case LibraryCategory.playlists:
+        return playlists;
+      case LibraryCategory.favorites:
+        return favorites;
+    }
+  }
+
   Future<void> loadLibraryData() async {
     isLoading = true;
     errorMessage = null;
     notifyListeners();
 
     try {
-      // Load data from API or local storage
-      // For now, load dummy data
-      await Future.delayed(const Duration(seconds: 1));
-      songs = [
-        {'title': 'Song 1', 'artist': 'Artist 1', 'url': 'url1'},
-        {'title': 'Song 2', 'artist': 'Artist 2', 'url': 'url2'},
-      ];
-      albums = [
-        {'title': 'Album 1', 'artist': 'Artist 1', 'cover': 'cover1'},
-        {'title': 'Album 2', 'artist': 'Artist 2', 'cover': 'cover2'},
-      ];
-      playlists = [
-        {'name': 'Playlist 1', 'songs': ['song1', 'song2']},
-        {'name': 'Playlist 2', 'songs': ['song3', 'song4']},
-      ];
-      favorites = songs; // Assume all songs are favorites for demo
-      recentlyAdded = playlists;
+      final uid = getCurrentUser()?.uid;
+
+      final results = await Future.wait([
+        _musicService.fetchAllSongs(),
+        _musicService.fetchAlbums(),
+        _musicService.fetchPlaylists(),
+        _musicService.fetchFavorites(uid),
+      ]);
+
+      songs = results[0];
+      albums = results[1];
+      playlists = results[2];
+      favorites = results[3];
+
+      // Recently added: most recently created playlists (top 3).
+      recentlyAdded = playlists.take(3).toList();
+      // Recently played: most recently created/added songs for now;
+      // swap for real per-user history once recentlyPlayed has volume.
+      recentlyPlayed = songs.take(3).toList();
     } catch (e) {
       errorMessage = 'Failed to load library: ${e.toString()}';
     } finally {
@@ -59,46 +79,40 @@ class LibrarypgModel extends ChangeNotifier {
     }
   }
 
-  Future<void> loadSongs() async {
-    // Specific loading for songs if needed
-    await loadLibraryData();
+  bool isFavorite(String songId) {
+    return favorites.any((s) => s['id'] == songId);
   }
 
-  Future<void> loadAlbums() async {
-    // Specific loading for albums if needed
-    await loadLibraryData();
-  }
+  Future<void> toggleFavorite(Map<String, dynamic> song) async {
+    final uid = getCurrentUser()?.uid;
+    final songId = song['id'] as String?;
+    if (songId == null) return;
 
-  Future<void> loadPlaylists() async {
-    // Specific loading for playlists if needed
-    await loadLibraryData();
-  }
-
-  Future<void> loadFavorites() async {
-    // Specific loading for favorites if needed
-    await loadLibraryData();
-  }
-
-  void addToFavorites(Map<String, dynamic> song) {
-    if (!favorites.contains(song)) {
+    final currentlyFav = isFavorite(songId);
+    if (currentlyFav) {
+      favorites.removeWhere((s) => s['id'] == songId);
+    } else {
       favorites.add(song);
-      notifyListeners();
     }
-  }
-
-  void removeFromFavorites(Map<String, dynamic> song) {
-    favorites.remove(song);
     notifyListeners();
+
+    await _musicService.toggleFavorite(uid, songId, !currentlyFav);
   }
 
   void playSong(Map<String, dynamic> song) {
     currentPlayingSong = song;
+    isPlaying = true;
     notifyListeners();
+
+    final songId = song['id'] as String?;
+    if (songId != null) {
+      _musicService.recordRecentlyPlayed(getCurrentUser()?.uid, songId);
+    }
     // Navigate to player or trigger playback
   }
 
   void pauseSong() {
-    // Implement pause logic
+    isPlaying = false;
     notifyListeners();
   }
 

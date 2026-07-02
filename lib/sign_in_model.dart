@@ -1,53 +1,45 @@
-//import '/backend/api_requests/api_calls.dart';
 import 'dart:async';
-import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
-//import 'package:shared_preferences/shared_preferences.dart';
-// Assume Firebase Auth is used
-// import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class SignInModel extends ChangeNotifier {
-  // State variables
   String email = '';
   String password = '';
   String confirmPassword = '';
   bool isLoading = false;
   String? errorMessage;
 
-  // Initialization
-  void initialize() {
-    // Any initialization logic if needed
-  }
+  void initialize() {}
 
-  // Methods
-  void updateEmail(String newEmail) {
-    email = newEmail;
+  void updateEmail(String v) {
+    email = v;
     notifyListeners();
   }
 
-  void updatePassword(String newPassword) {
-    password = newPassword;
+  void updatePassword(String v) {
+    password = v;
     notifyListeners();
   }
 
-  void updateConfirmPassword(String newConfirmPassword) {
-    confirmPassword = newConfirmPassword;
+  void updateConfirmPassword(String v) {
+    confirmPassword = v;
     notifyListeners();
   }
 
   bool validateInputs() {
     if (email.isEmpty || !email.contains('@')) {
-      errorMessage = 'Please enter a valid email';
+      errorMessage = 'Please enter a valid email address.';
       notifyListeners();
       return false;
     }
-    if (password.isEmpty || password.length < 6) {
-      errorMessage = 'Password must be at least 6 characters';
+    if (password.length < 6) {
+      errorMessage = 'Password must be at least 6 characters.';
       notifyListeners();
       return false;
     }
     if (password != confirmPassword) {
-      errorMessage = 'Passwords do not match';
+      errorMessage = 'Passwords do not match.';
       notifyListeners();
       return false;
     }
@@ -63,22 +55,56 @@ class SignInModel extends ChangeNotifier {
     notifyListeners();
 
     try {
-      // Firebase Auth sign-up
-      // final userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
-      //   email: email,
-      //   password: password,
-      // );
-      // Assume success for now
-      await Future.delayed(const Duration(seconds: 1)); // Simulate API call
+      final credential = await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(
+        email: email.trim(),
+        password: password,
+      );
+
+      // Create user document in Firestore
+      final uid = credential.user?.uid;
+      if (uid != null) {
+        await FirebaseFirestore.instance.collection('users').doc(uid).set({
+          'display_name': email.split('@').first,
+          'email': email.trim(),
+          'photoUrl': null,
+          'followers': [],
+          'following': [],
+          'likes': [],
+          'posts': [],
+          'about': '',
+          'createdAt': FieldValue.serverTimestamp(),
+        });
+      }
 
       isLoading = false;
       notifyListeners();
       return true;
-    } catch (e) {
-      errorMessage = 'Sign-up failed: ${e.toString()}';
+    } on FirebaseAuthException catch (e) {
+      errorMessage = _friendlyError(e.code);
       isLoading = false;
       notifyListeners();
       return false;
+    } catch (e) {
+      errorMessage = 'Something went wrong. Please try again.';
+      isLoading = false;
+      notifyListeners();
+      return false;
+    }
+  }
+
+  String _friendlyError(String code) {
+    switch (code) {
+      case 'email-already-in-use':
+        return 'An account already exists with this email.';
+      case 'invalid-email':
+        return 'Please enter a valid email address.';
+      case 'weak-password':
+        return 'Password is too weak. Use at least 6 characters.';
+      case 'operation-not-allowed':
+        return 'Email/password sign-up is not enabled.';
+      default:
+        return 'Sign-up failed. Please try again.';
     }
   }
 

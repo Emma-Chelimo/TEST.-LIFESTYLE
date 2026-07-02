@@ -15,6 +15,10 @@ Future<void> signOut() {
   return auth.signOut();
 }
 
+Future<void> signOutUser() {
+  return auth.signOut();
+}
+
 User? getCurrentUser() {
   return auth.currentUser;
 }

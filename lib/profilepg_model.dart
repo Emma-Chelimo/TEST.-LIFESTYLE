@@ -1,4 +1,5 @@
 import '/backend/api_requests/api_calls.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
@@ -112,6 +113,15 @@ class ProfilepgModel extends ChangeNotifier {
       notifyListeners();
     } catch (e) {
       errorMessage = 'Failed to update name: ${e.toString()}';
+      notifyListeners();
+    }
+  }
+
+  Future<void> signOut() async {
+    try {
+      await signOutUser();
+    } catch (e) {
+      errorMessage = 'Sign out failed: ${e.toString()}';
       notifyListeners();
     }
   }

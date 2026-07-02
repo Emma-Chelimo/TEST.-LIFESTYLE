@@ -4,10 +4,10 @@ import '/flutter_flow/flutter_flow_animations.dart' as ffAnim;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:go_router/go_router.dart';
 // Bottom navigation is now provided by NavShell (ShellRoute) in main.dart
 
 export 'basehomepg_model.dart';
-
 
 class BasehomepgWidget extends StatefulWidget {
   const BasehomepgWidget({super.key});
@@ -21,7 +21,7 @@ class BasehomepgWidget extends StatefulWidget {
 
 class _BasehomepgWidgetState extends State<BasehomepgWidget>
     with TickerProviderStateMixin, ffAnim.AnimationMixin {
-  late BasehomepgModel _model;
+  late Basehomepg_model _model;
   // Index handled globally by NavShell
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -29,7 +29,7 @@ class _BasehomepgWidgetState extends State<BasehomepgWidget>
   @override
   void initState() {
     super.initState();
-    _model = BasehomepgModel();
+    _model = Basehomepg_model();
     _model.addListener(_onModelChanged);
     _model.initialize();
 
@@ -179,7 +179,7 @@ class _BasehomepgWidgetState extends State<BasehomepgWidget>
                               if (_model.isPlaying) {
                                 _model.pauseSong();
                               } else if (_model.nowPlaying != null) {
-                                _model.playSong(_model.nowPlaying!);
+                                { _model.playSong(_model.nowPlaying!); context.pushNamed('playerpg', extra: _model.nowPlaying); }
                               }
                             },
                             child: Container(
@@ -302,8 +302,10 @@ class _BasehomepgWidgetState extends State<BasehomepgWidget>
                           return GestureDetector(
                             onTap: () {
                               if ((playlist['songs'] as List).isNotEmpty) {
-                                _model.playSong(
-                                    (playlist['songs'] as List).first);
+                                final song = (playlist['songs'] as List).first
+                                    as Map<String, dynamic>;
+                                _model.playSong(song);
+                                context.pushNamed('playerpg', extra: song);
                               }
                             },
                             child: Column(
@@ -382,7 +384,7 @@ class _BasehomepgWidgetState extends State<BasehomepgWidget>
                         children: List.generate(_model.albums.length, (i) {
                           final album = _model.albums[i];
                           return GestureDetector(
-                            onTap: () => _model.playSong(album),
+                            onTap: () { _model.playSong(album); context.pushNamed('playerpg', extra: album); },
                             child: Column(
                               children: [
                                 Expanded(
@@ -460,7 +462,7 @@ class _BasehomepgWidgetState extends State<BasehomepgWidget>
                             List.generate(_model.recommended.length, (i) {
                           final song = _model.recommended[i];
                           return GestureDetector(
-                            onTap: () => _model.playSong(song),
+                            onTap: () { _model.playSong(song); context.pushNamed('playerpg', extra: song); },
                             child: Column(
                               children: [
                                 Expanded(

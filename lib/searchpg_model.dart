@@ -1,116 +1,100 @@
 import '/backend/api_requests/api_calls.dart';
 import 'dart:async';
-import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SearchpgModel extends ChangeNotifier {
-  // State variables
   String searchQuery = '';
   List<Map<String, dynamic>> searchResults = [];
   bool isSearching = false;
   String? errorMessage;
-  Map<String, dynamic> filters = {};
-  int currentPage = 1;
-  int totalPages = 0;
-  bool hasMoreResults = false;
-  Map<String, dynamic>? selectedItem;
   List<String> recentSearches = [];
 
   Timer? _debounceTimer;
 
-  // Initialization
+  static const _recentKey = 'recent_searches';
+  static const _maxRecent = 8;
+
   void initialize() {
-    // Load recent searches if needed
     _loadRecentSearches();
   }
 
-  // Methods
   void onSearchChanged(String query) {
     searchQuery = query;
+    errorMessage = null;
     _debounceTimer?.cancel();
-    _debounceTimer = Timer(const Duration(milliseconds: 500), () {
-      if (query.isNotEmpty) {
-        performSearch();
-      } else {
-        clearSearch();
-      }
-    });
+
+    if (query.trim().isEmpty) {
+      searchResults.clear();
+      notifyListeners();
+      return;
+    }
+
+    _debounceTimer = Timer(const Duration(milliseconds: 450), performSearch);
     notifyListeners();
   }
 
   Future<void> performSearch() async {
-    if (searchQuery.isEmpty) return;
+    final query = searchQuery.trim();
+    if (query.isEmpty) return;
 
     isSearching = true;
     errorMessage = null;
-    currentPage = 1;
     searchResults.clear();
     notifyListeners();
 
     try {
-      // Call searchSong which now returns a list of results
-      final results = await searchSong(searchQuery);
-      if (results.isNotEmpty) {
-        searchResults.addAll(results);
-        hasMoreResults = false; // iTunes search returns all at once, no pagination
-        totalPages = 1;
+      final results = await searchSong(query);
+      if (results.isEmpty) {
+        errorMessage = 'No results found for "$query"';
       } else {
-        errorMessage = 'No results found for "$searchQuery"';
+        searchResults = results;
       }
+      await _addToRecentSearches(query);
     } catch (e) {
-      errorMessage = 'Search failed: ${e.toString()}';
+      errorMessage = 'Search failed. Check your connection and try again.';
     } finally {
       isSearching = false;
       notifyListeners();
     }
-
-    _addToRecentSearches(searchQuery);
-  }
-
-  Future<void> loadMore() async {
-    // iTunes API doesn't support pagination, so no more results
-    hasMoreResults = false;
-    notifyListeners();
-  }
-
-  void applyFilters(Map<String, dynamic> newFilters) {
-    filters = newFilters;
-    // Reset and perform search with filters
-    currentPage = 1;
-    searchResults.clear();
-    notifyListeners();
-    performSearch(); // Re-search with filters applied in API call
-  }
-
-  void selectItem(Map<String, dynamic> item) {
-    selectedItem = item;
-    notifyListeners();
-    // Navigate to details or player, e.g., context.pushNamed('Playerpg', extra: item);
   }
 
   void clearSearch() {
     searchQuery = '';
     searchResults.clear();
     errorMessage = null;
-    currentPage = 1;
     _debounceTimer?.cancel();
     notifyListeners();
   }
 
-  void _addToRecentSearches(String query) {
-    if (!recentSearches.contains(query)) {
-      recentSearches.insert(0, query);
-      if (recentSearches.length > 10) {
-        recentSearches.removeLast();
-      }
-      // Persist to local storage if needed (e.g., SharedPreferences)
-      notifyListeners();
+  Future<void> removeRecentSearch(String query) async {
+    recentSearches.remove(query);
+    notifyListeners();
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setStringList(_recentKey, recentSearches);
+  }
+
+  Future<void> clearAllRecent() async {
+    recentSearches.clear();
+    notifyListeners();
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.remove(_recentKey);
+  }
+
+  Future<void> _addToRecentSearches(String query) async {
+    recentSearches.remove(query); // avoid duplicates
+    recentSearches.insert(0, query);
+    if (recentSearches.length > _maxRecent) {
+      recentSearches = recentSearches.sublist(0, _maxRecent);
     }
+    notifyListeners();
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setStringList(_recentKey, recentSearches);
   }
 
   Future<void> _loadRecentSearches() async {
-    // Load from local storage; placeholder
-    recentSearches = ['example1', 'example2']; // Demo data
+    final prefs = await SharedPreferences.getInstance();
+    recentSearches = prefs.getStringList(_recentKey) ?? [];
     notifyListeners();
   }
 

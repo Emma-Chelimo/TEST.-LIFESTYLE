@@ -1,47 +1,41 @@
-import '/backend/api_requests/api_calls.dart';
 import 'dart:async';
-import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-// Assume Firebase Auth is used
-// import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginModel extends ChangeNotifier {
-  // State variables
   String email = '';
   String password = '';
   bool isLoading = false;
   String? errorMessage;
   bool rememberMe = false;
 
-  // Initialization
   void initialize() {
     _loadSavedCredentials();
   }
 
-  // Methods
-  void updateEmail(String newEmail) {
-    email = newEmail;
+  void updateEmail(String v) {
+    email = v;
     notifyListeners();
   }
 
-  void updatePassword(String newPassword) {
-    password = newPassword;
+  void updatePassword(String v) {
+    password = v;
     notifyListeners();
   }
 
-  void toggleRememberMe(bool value) {
-    rememberMe = value;
+  void toggleRememberMe(bool v) {
+    rememberMe = v;
     notifyListeners();
   }
 
   bool validateInputs() {
     if (email.isEmpty || !email.contains('@')) {
-      errorMessage = 'Please enter a valid email';
+      errorMessage = 'Please enter a valid email address';
       notifyListeners();
       return false;
     }
-    if (password.isEmpty || password.length < 6) {
+    if (password.length < 6) {
       errorMessage = 'Password must be at least 6 characters';
       notifyListeners();
       return false;
@@ -58,13 +52,10 @@ class LoginModel extends ChangeNotifier {
     notifyListeners();
 
     try {
-      // Firebase Auth sign-in
-      // final userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(
-      //   email: email,
-      //   password: password,
-      // );
-      // Assume success for now
-      await Future.delayed(const Duration(seconds: 1)); // Simulate API call
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: email.trim(),
+        password: password,
+      );
 
       if (rememberMe) {
         await _saveCredentials();
@@ -75,19 +66,41 @@ class LoginModel extends ChangeNotifier {
       isLoading = false;
       notifyListeners();
       return true;
+    } on FirebaseAuthException catch (e) {
+      errorMessage = _friendlyError(e.code);
+      isLoading = false;
+      notifyListeners();
+      return false;
     } catch (e) {
-      errorMessage = 'Sign-in failed: ${e.toString()}';
+      errorMessage = 'Something went wrong. Please try again.';
       isLoading = false;
       notifyListeners();
       return false;
     }
   }
 
+  String _friendlyError(String code) {
+    switch (code) {
+      case 'user-not-found':
+        return 'No account found with this email.';
+      case 'wrong-password':
+        return 'Incorrect password. Please try again.';
+      case 'invalid-email':
+        return 'Please enter a valid email address.';
+      case 'user-disabled':
+        return 'This account has been disabled.';
+      case 'too-many-requests':
+        return 'Too many attempts. Please try again later.';
+      default:
+        return 'Sign-in failed. Please check your credentials.';
+    }
+  }
+
   Future<void> _saveCredentials() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString('email', email);
-    await prefs.setString('password', password);
-    await prefs.setBool('rememberMe', rememberMe);
+    await prefs.setBool('rememberMe', true);
+    // Note: never save raw passwords to SharedPreferences in production
   }
 
   Future<void> _loadSavedCredentials() async {
@@ -95,7 +108,6 @@ class LoginModel extends ChangeNotifier {
     rememberMe = prefs.getBool('rememberMe') ?? false;
     if (rememberMe) {
       email = prefs.getString('email') ?? '';
-      password = prefs.getString('password') ?? '';
     }
     notifyListeners();
   }
@@ -103,7 +115,6 @@ class LoginModel extends ChangeNotifier {
   Future<void> _clearCredentials() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove('email');
-    await prefs.remove('password');
     await prefs.setBool('rememberMe', false);
   }
 
